@@ -1,0 +1,142 @@
+{% if section.settings.bg_image != blank %}
+  <style>
+    #shopify-section-{{ section.id }} {
+      margin-bottom: 0 !important;
+    }
+  </style>
+{% endif %}
+
+<div>
+  <div class="page-width">
+    <div class="newsletter__inner ml-auto mr-auto">
+      <div class="newsletter__icons-wrapper mb-1.5 mb-lg-0 flex-center position-relative">
+        <div class="newsletter__icon newsletter__icon--left mr-1.5">
+          {{ section.settings.icon_1 }}
+        </div>
+        <div class="newsletter__icon newsletter__icon--right">
+          {{ section.settings.icon_2 }}
+        </div>
+      </div>
+
+      <div class="text-center">
+        <h5 class="mb-0.5 mb-md-1 text-{{ section.settings.subheading_color }} text-md-1.125">
+          {{- section.settings.subheading -}}
+        </h5>
+
+        <h2 class="mb-1 mb-md-2.5">
+          {{- section.settings.heading -}}
+        </h2>
+
+        <div class="rte mb-1.5 mb-md-2.5 text-black-600">
+          {{- section.settings.content -}}
+        </div>
+
+        {% form 'customer', class: 'newsletter__form ml-auto mr-auto' %}
+          <input type="hidden" name="contact[tags]" value="newsletter">
+
+          <div class="d-flex position-relative">
+            <label class="form__field__label" for="NewsletterForm--{{ section.id }}">
+              <svg class="icon {{ class }}" width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 4.1416H20C21.1 4.1416 22 5.0416 22 6.1416V18.1416C22 19.2416 21.1 20.1416 20 20.1416H4C2.9 20.1416 2 19.2416 2 18.1416V6.1416C2 5.0416 2.9 4.1416 4 4.1416Z" stroke="#7A7A7A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M22 6.1416L12 13.1416L2 6.1416" stroke="#13130C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </label>
+            <input
+              id="NewsletterForm--{{ section.id }}"
+              type="email"
+              name="contact[email]"
+              class="form__field__input pl-3"
+              value="{{ form.email }}"
+              aria-required="true"
+              autocorrect="off"
+              autocapitalize="off"
+              autocomplete="email"
+              {% if form.errors %}
+                autofocus
+                aria-invalid="true"
+                aria-describedby="Newsletter-error--{{ section.id }}"
+                {% elsif form.posted_successfully? %}
+                aria-describedby="Newsletter-success--{{ section.id }}"
+              {% endif %}
+              placeholder="Email Address"
+              required
+            >
+            <button type="submit" class="btn btn-dark" name="commit" id="Subscribe" aria-label="{{ 'newsletter.button_label' | t }}">
+              Subscribe
+            </button>
+          </div>
+          {%- if form.errors -%}
+            <small class="text-pink" id="Newsletter-error--{{ section.id }}">{% render 'icon-error' %}{{ form.errors.translated_fields['email'] | capitalize }} {{ form.errors.messages['email'] }}</small>
+          {%- endif -%}
+
+          {%- if form.posted_successfully? -%}
+            <h3 class="newsletter-form__message newsletter-form__message--success form__message" id="Newsletter-success--{{ section.id }}" tabindex="-1" autofocus>{% render 'icon-success' %}{{ 'newsletter.success' | t }}</h3>
+          {%- endif -%}
+        {% endform %}
+      </div>
+    </div>
+  </div>
+
+  <div class="newsletter__bg-image" style="background-image: url('{{ section.settings.bg_image | img_url: 'master' }}')"> </div>
+</div>
+
+{% schema %}
+{
+  "name": "Newsletter",
+  "class": "newsletter position-relative overflow-hidden section-space",
+  "settings": [
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading"
+    },
+    {
+      "type": "select",
+      "id": "subheading_color",
+      "options": [
+        {"value": "blue", "label": "Blue"},
+        {"value": "red", "label": "Red"},
+        {"value": "pink", "label": "Pink"},
+        {"value": "orange", "label": "Orange"},
+        {"value": "cream", "label": "Cream"},
+        {"value": "light-green", "label": "Light green"},
+        {"value": "green", "label": "Green"},
+        {"value": "yellow", "label": "Yellow"},
+        {"value": "black-600", "label": "Black"}
+      ],
+      "default": "blue",
+      "label": "Subheading color"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "richtext",
+      "id": "content",
+      "label": "Content"
+    },
+    {
+      "type": "image_picker",
+      "id": "bg_image",
+      "label": "Bottom row image"
+    },
+    {
+      "type": "text",
+      "id": "icon_1",
+      "label": "Icon #1"
+    },
+    {
+      "type": "text",
+      "id": "icon_2",
+      "label": "Icon #2"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Newsletter"
+    }
+  ]
+}
+{% endschema %}

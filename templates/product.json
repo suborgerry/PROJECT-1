@@ -1,0 +1,125 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "vendor": {
+          "type": "text",
+          "settings": {
+            "text": "{{ product.metafields.descriptors.category.value }}",
+            "text_style": "uppercase"
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "description": {
+          "type": "description",
+          "settings": {}
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "dropdown"
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false
+          }
+        },
+        "2c221bb5-2cc2-46cd-b854-32c88b3035a9": {
+          "type": "shopify:\/\/apps\/recharge-subscriptions\/blocks\/subscription-widget\/371eed76-0b44-4869-9813-730372ea378e",
+          "settings": {
+            "product": "{{product}}"
+          }
+        }
+      },
+      "block_order": [
+        "vendor",
+        "title",
+        "price",
+        "description",
+        "variant_picker",
+        "quantity_selector",
+        "buy_buttons",
+        "2c221bb5-2cc2-46cd-b854-32c88b3035a9"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "gallery_layout": "thumbnail_slider",
+        "media_size": "small",
+        "mobile_thumbnails": "show",
+        "hide_variants": true,
+        "enable_video_looping": false
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "settings": {
+        "heading": "WE Also recommend",
+        "icon_color": "blue",
+        "collection": "",
+        "button_label": "All Beers",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "columns_mobile": "2"
+      }
+    },
+    "165364155340335ab6": {
+      "type": "membership",
+      "blocks": {
+        "57c75353-5178-4efc-983a-4b42756003a5": {
+          "type": "text",
+          "settings": {
+            "title": "Per Week",
+            "description": "Lorem ipsum det",
+            "price": "$35"
+          }
+        },
+        "e96823e3-8822-4c4e-a621-ecd5095242c5": {
+          "type": "text",
+          "settings": {
+            "title": "Per Month",
+            "description": "Lorem ipsum det",
+            "price": "$120"
+          }
+        },
+        "ea99b821-8c0e-40f0-815c-390305329185": {
+          "type": "text",
+          "settings": {
+            "title": "Per Year",
+            "description": "Lorem ipsum det",
+            "price": "$1,240"
+          }
+        }
+      },
+      "block_order": [
+        "57c75353-5178-4efc-983a-4b42756003a5",
+        "e96823e3-8822-4c4e-a621-ecd5095242c5",
+        "ea99b821-8c0e-40f0-815c-390305329185"
+      ],
+      "settings": {
+        "subheading": "Beer Membership",
+        "heading": "Membership For more beer Heading",
+        "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed magna tempus interdum id volutpat diam at nullam.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed magna tempus interdum id volutpat diam at nullam.<\/p>",
+        "image": "shopify:\/\/shop_images\/membership.jpg"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "product-recommendations",
+    "165364155340335ab6"
+  ]
+}

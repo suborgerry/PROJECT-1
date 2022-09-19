@@ -1,0 +1,150 @@
+<div class="page-width">
+    <div class="row row--md">
+      <div class="col-lg-4">
+        <h5 class="mb-0.5 mb-md-1 text-md-1.125 text-{{ section.settings.subheading_color }}">{{ section.settings.subheading }}</h5>
+
+        <h2 class="mb-1.5 mb-md-2.5 d-flex align-items-start {{ heading_class }}">
+          <span class="icon--triangle text-{{ section.settings.icon_color }} mr-0.5 mr-md-1 mt-0.5 mt-md-1"> </span>
+          <span>{{- section.settings.heading -}}</span>
+        </h2>
+
+        <div class="rte text-black-600">
+            {{section.settings.content}}
+            <a href="mailto:{{section.settings.mail_link}}" class="text-black-600">{{section.settings.mail_text}}</a>
+        </div>
+      </div>
+      <div class="col-lg-8">
+        <div class="accordion__wrapper mt-1.5">
+            {% for block in section.blocks %}
+            <div class="accordion__item bg-light">
+                <div class="accordion_title">
+                    <h4 class="mb-0">{{ block.settings.title }}</h4>
+                    <svg width="34" height="25" viewBox="0 0 34 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M32.959 4.16235L17.0005 20.1208L1.04209 4.16235" stroke="#13130C" stroke-width="1.8"/>
+                    </svg>
+                </div>
+                <div class="accordion__content text-black-600">
+                    <p>{{ block.settings.content }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+      </div>
+    </div>
+</div>
+
+<script>
+    const accordion = (content, title) => {
+    let tabContent = document.querySelectorAll(content);
+    const acc = document.getElementsByClassName(title);
+        
+    for (let i = 0; i < acc.length; i++) {
+          acc[i].onclick = function () {
+          this.classList.toggle('active')
+          if (this.nextElementSibling.style.maxHeight) {
+            this.nextElementSibling.style.maxHeight = null
+          } else {
+            this.nextElementSibling.style.maxHeight =
+              this.nextElementSibling.scrollHeight + 'px'
+          }
+        }
+      }
+    };
+
+    accordion(".accordion__content", 'accordion_title');
+</script>
+
+{% schema %}
+{
+  "name": "Accordion",
+  "class": "accordion section-space",
+  "tag": "section",
+  "settings": [
+    {
+        "type": "text",
+        "id": "subheading",
+        "label": "Subheading"
+      },
+      {
+        "type": "select",
+        "id": "subheading_color",
+        "options": [
+          {"value": "blue", "label": "Blue"},
+          {"value": "red", "label": "Red"},
+          {"value": "pink", "label": "Pink"},
+          {"value": "orange", "label": "Orange"},
+          {"value": "cream", "label": "Cream"},
+          {"value": "light-green", "label": "Light green"},
+          {"value": "green", "label": "Green"},
+          {"value": "yellow", "label": "Yellow"},
+          {"value": "black-600", "label": "Black"}
+        ],
+        "label": "Subheading color"
+      },
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading"
+      },
+      {
+        "type": "select",
+        "id": "icon_color",
+        "options": [
+          {"value": "blue", "label": "Blue"},
+          {"value": "red", "label": "Red"},
+          {"value": "pink", "label": "Pink"},
+          {"value": "orange", "label": "Orange"},
+          {"value": "cream", "label": "Cream"},
+          {"value": "light-green", "label": "Light green"},
+          {"value": "green", "label": "Green"},
+          {"value": "yellow", "label": "Yellow"},
+          {"value": "black-600", "label": "Black"}
+        ],
+        "label": "Icon color"
+      },
+      {
+          "type": "text",
+          "id": "svg",
+          "label": "Circle SVG"
+      },
+      {
+          "type": "text",
+          "id": "content",
+          "label": "Content"
+      },
+      {
+        "type": "text",
+        "id": "mail_text",
+        "label": "Mail"
+      },
+      {
+        "type": "text",
+        "id": "mail_link",
+        "label": "Mail link"
+      }
+  ],
+  "blocks": [
+      {
+          "type": "text",
+          "name": "Accordion item",
+          "settings": [
+            {
+                "type": "text", 
+                "id": "title",
+                "label": "Title"
+            },
+            {
+                "type": "text",
+                "id": "content",
+                "label": "Content"
+            }
+          ]
+      }
+  ],
+  "presets": [
+        {
+            "name": "Accordion section"
+        }
+    ]
+}
+{% endschema %}

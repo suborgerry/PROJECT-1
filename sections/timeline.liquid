@@ -1,0 +1,108 @@
+<div class="page-width">
+    <div class="row row--md">
+      <div class="col-lg-4">
+        {%- render 'partial-heading', with {
+            icon_color: section.settings.icon_color,
+            subheading: section.settings.subheading,
+            subheading_color: section.settings.subheading_color,
+            heading: section.settings.heading
+          } -%}
+      </div>
+      <div class="col-lg-8">
+        <div class="timeline__wrapper d-flex flex-column">
+            {% for block in section.blocks %}
+                <div class="timeline_item row bg-cream text-black-600 align-items-start position-relative">
+                    <div class="col-lg-3 timeline_item_first-column d-flex align-items-center">
+                        <span>{{section.settings.svg}}</span>
+                        <h3 class="ml-1 text-blue">{{block.settings.data}}</h3>
+                    </div>
+                    <div class="col-lg-9">
+                        <p class="text-md-1.125 mt-1.5 mt-md-0 ml-1.5">{{block.settings.content}}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+      </div>
+      </div>
+    </div>
+</div>
+
+{% schema %}
+{
+  "name": "Timeline",
+  "class": "timeline bg-light",
+  "tag": "section",
+  "settings": [
+    {
+        "type": "text",
+        "id": "subheading",
+        "label": "Subheading"
+      },
+      {
+        "type": "select",
+        "id": "subheading_color",
+        "options": [
+          {"value": "blue", "label": "Blue"},
+          {"value": "red", "label": "Red"},
+          {"value": "pink", "label": "Pink"},
+          {"value": "orange", "label": "Orange"},
+          {"value": "cream", "label": "Cream"},
+          {"value": "light-green", "label": "Light green"},
+          {"value": "green", "label": "Green"},
+          {"value": "yellow", "label": "Yellow"},
+          {"value": "black-600", "label": "Black"}
+        ],
+        "label": "Subheading color"
+      },
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading"
+      },
+      {
+        "type": "select",
+        "id": "icon_color",
+        "options": [
+          {"value": "blue", "label": "Blue"},
+          {"value": "red", "label": "Red"},
+          {"value": "pink", "label": "Pink"},
+          {"value": "orange", "label": "Orange"},
+          {"value": "cream", "label": "Cream"},
+          {"value": "light-green", "label": "Light green"},
+          {"value": "green", "label": "Green"},
+          {"value": "yellow", "label": "Yellow"},
+          {"value": "black-600", "label": "Black"}
+        ],
+        "label": "Icon color"
+      },
+      {
+          "type": "text",
+          "id": "svg",
+          "label": "Circle SVG"
+      }
+  ],
+  "blocks": [
+      {
+          "type": "text",
+          "name": "Time item",
+          "settings": [
+            {
+                "type": "text", 
+                "id": "data",
+                "label": "Data"
+            },
+            {
+                "type": "text",
+                "id": "content",
+                "label": "Content"
+            }
+          ]
+      }
+  ],
+  "presets": [
+        {
+            "name": "Timeline section"
+        }
+    ]
+}
+{% endschema %}

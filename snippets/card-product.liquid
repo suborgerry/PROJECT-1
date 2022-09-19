@@ -1,0 +1,42 @@
+{%- assign is_available = true -%}
+{%- unless card_product.available -%}
+  {%- assign is_available = false -%}
+{%- endunless -%}
+
+<div class="card-product position-relative">
+  <div class="media media--custom" style="padding-top:{{ settings.product_card_ratio }}%">
+    {% render 'image' with card_product.featured_media, class: 'fit-contain' %}
+
+    {% unless card_product.available%}
+      <div class="card-product__badge media--disable position-absolute text-center z-stack-1">
+        <div class="media media--circle bg-red z-stack-1">
+          <h4 class="absolute-center media--disable text-light z-stack-2">Sold out</h4>
+        </div>
+      </div>
+    {% endunless %}
+    <a href="{{ card_product.url }}" class="full-width-link"> </a>
+  </div>
+  <div class="text-{{ settings.product_card_alignment }}">
+    <div class="position-relative">
+      <h5 class="mb-0.25 mb-md-0.5 text-0.875 text-md-1.125">{{ card_product.metafields.descriptors.category }}</h5>
+      <h3 class="card-product__title{% if settings.product_card_title_break %} card-product__title--break-word{% endif %}">{{ card_product.title }}</h3>
+
+      <a href="{{ card_product.url }}" class="full-width-link"> </a>
+    </div>
+
+    <div class="d-flex align-items-center justify-content-center">
+      {%- render 'price', product: card_product, use_variant: true, class: 'mr-0.5 mr-md-1 text-md-1.125' -%}
+
+      {%- form 'product', card_product -%}
+        <input type="hidden" name="id" data-productid="{{ product.id }}" value="{{ card_product.selected_or_first_available_variant.id }}">
+        <button type="submit" class="btn btn-inline btn--with-icon text-red"{% unless is_available %} disabled{% endunless %}>
+          {% if is_available %}
+            Buy now {%- render 'icon' with 'plus', class: 'ml-0.25' -%}
+          {% else %}
+            Sold out
+          {% endif %}
+        </button>
+      {%- endform -%}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,204 @@
+<image-banner class="image-banner d-block min-vh-100 position-relative" data-section-id="{{ section.id }}" data-autoplay="{{ section.settings.autoplay_delay }}">
+  <style>
+    #shopify-section-{{ section.id }} .image-banner__slide__heading {
+      font-size: {{ section.settings.heading_size_mobile | divided_by: 3.75 }}vw;
+    }
+    @media (min-width: 750px) {
+      #shopify-section-{{ section.id }} .image-banner__slide__heading {
+        font-size: {{ section.settings.heading_size_desktop | divided_by: 14.4 }}vw;
+      }
+    }
+  </style>
+
+
+
+  
+  {% for block in section.blocks %}
+    <div class="image-banner__slide flex-center absolute-fill events-none z-stack" data-block-id="{{ block.id }}"  style="--color: {{ block.settings.color.red }}, {{ block.settings.color.green }}, {{ block.settings.color.blue }}">
+      <div>
+        <div class="image-banner__slide__bg bg-light absolute-center h-100 w-100 z-behind"> </div>
+        {% if block.settings.featured_image != blank %}
+          <div class="image-banner__slide__image absolute-center z-stack-2">
+            <div data-parallax>
+              {% render 'image' with block.settings.featured_image, class: 'fit-contain' %}
+            </div>
+          </div>
+        {% endif %}
+
+        <div class="image-banner__slide__circle-1 position-absolute z-behind" data-parallax data-parallax-amplifier="0.5">
+          <div class="media media--circle" style="background-color: {{ block.settings.circle_big_color }};"> </div>
+        </div>
+        <div class="image-banner__slide__circle-2 position-absolute z-stack-2" data-parallax data-parallax-amplifier="2">
+          <div class="media media--circle" style="background-color: {{ block.settings.circle_small_color }};"> </div>
+        </div>
+        <div class="image-banner__slide__rect position-absolute z-stack-2" style="background-color: {{ block.settings.rect_color }};"> </div>
+        <div class="image-banner__slide__triangle position-absolute z-behind" style="color: {{ block.settings.triangle_color }};">
+          <svg width="71" height="81" viewBox="0 0 71 81" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M.978025 40.1911 70.0829.293401V80.0888L.978025 40.1911Z" fill="currentColor"/></svg>
+        </div>
+
+        <h2 class="image-banner__slide__heading text-center">{{ block.settings.heading }}</h2>
+      </div>
+    </div>
+  {% endfor %}
+
+  <div class="page-width">
+    <div class="d-flex flex-column position-relative min-vh-100 z-stack">
+      {% unless section.blocks.size == 0 %}
+        <button class="image-banner__arrow image-banner__arrow--prev btn btn-inline position-absolute z-stack-2 d-none d-md-block" data-slide-change="prev">{% render 'icon' with 'arrow-lg', class: 'icon--revers' %}</button>
+        <button class="image-banner__arrow image-banner__arrow--next btn btn-inline position-absolute z-stack-2 d-none d-md-block" data-slide-change="next">{% render 'icon' with 'arrow-lg' %}</button>
+      {% endunless %}
+
+      <div class="d-flex justify-content-between w-100 mt-auto mb-1.5 mb-md-2.5 text-0.875 text-md-1.125">
+        <div class="flex-center">
+          {%- if section.settings.enable_social -%}
+            <p class="mb-0 text-black-600 font-bold">{{ section.settings.social_heading | upcase }}</p>
+            {%- render 'social-media' -%}
+          {%- endif -%}
+        </div>
+
+        <div class="text-right">
+          {%- if section.settings.enable_call -%}
+            <p>
+              <a href="tel:{{ shop.phone }}" class="flex-center text-black-600 font-bold">
+                {%- render 'icon' with 'phone' -%}
+                <span class="pl-0.5 pl-md-1">{{ section.settings.call_heading | upcase }}</span>
+              </a>
+            </p>
+          {%- endif -%}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% if section.settings.enable_scroll_down %}
+    <button class="image-banner__button-down btn btn-inline position-absolute z-stack-2 d-none d-md-block" data-scroll-down>{% render 'icon' with 'chevron-down' %}</button>
+  {% endif %}
+</image-banner>
+
+{% schema %}
+{
+  "name": "Image banner",
+  "tag": "section",
+  "class": "overflow-hidden",
+  "settings": [
+    {
+	    "type": "checkbox",
+      "id": "enable_scroll_down",
+      "label": "Enable scroll down"
+	  },
+    {
+      "type": "range",
+      "id": "autoplay_delay",
+      "min": 0,
+      "step": 500,
+      "max": 8000,
+      "unit": "ms",
+      "label": "Autoplay delay on mobile",
+      "default": 5000,
+      "info": "Set 0 to disable"
+    },
+    {
+      "type": "header",
+      "content": "Heading sizing"
+    },
+    {
+      "type": "range",
+      "id": "heading_size_mobile",
+      "min": 30,
+      "max": 90,
+      "step": 1,
+      "default": 65,
+      "label": "Mobile font size"
+    },
+    {
+      "type": "range",
+      "id": "heading_size_desktop",
+      "min": 150,
+      "max": 250,
+      "step": 1,
+      "default": 197,
+      "label": "Desktop font size"
+    },
+    {
+      "type": "header",
+      "content": "Social"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_social",
+      "label": "Enable social"
+    },
+    {
+      "type": "text",
+      "id": "social_heading",
+      "label": "Heading"
+    },
+    {
+      "type": "header",
+      "content": "Call us"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_call",
+      "label": "Enable social"
+    },
+    {
+      "type": "text",
+      "id": "call_heading",
+      "label": "Heading"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Slide",
+      "type": "slide",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading"
+        },
+        {
+          "type": "image_picker",
+          "id": "featured_image",
+          "label": "Featured image"
+        },
+        {
+          "type": "color",
+          "id": "color",
+          "label": "Color"
+        },
+        {
+          "type": "header",
+          "content": "Decoration settings"
+        },
+        {
+          "type": "color",
+          "id": "circle_big_color",
+          "label": "Big circle color"
+        },
+        {
+          "type": "color",
+          "id": "circle_small_color",
+          "label": "Small circle color"
+        },
+        {
+          "type": "color",
+          "id": "rect_color",
+          "label": "Rectangle color"
+        },
+        {
+          "type": "color",
+          "id": "triangle_color",
+          "label": "Triangle color"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image banner"
+    }
+  ]
+}
+{% endschema %}

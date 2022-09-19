@@ -1,0 +1,46 @@
+{% comment %}
+  Renders an image
+
+  Accepts:
+  - image: {Object} Image Liquid object
+  - image_mobile: {Object} Image Liquid object (optional)
+  - class: {String} Class name (optional)
+  - is_media: {Boolean} is wrap in media or not (optional)
+  - media_class: {String} Class name (optional)
+
+  Usage:
+  {% render 'image' with image %}
+{% endcomment %}
+
+{%- assign media_enabled = false -%}
+{%- if is_media -%}
+  {%- assign media_enabled = true -%}
+{%- endif -%}
+
+{%- if media_enabled -%}
+  <div class="media {{ media_class }}" style="padding-top:{{ 1 | divided_by: image.aspect_ratio | times: 100 }}%">
+{%- endif -%}
+
+<picture>
+  {% if image_mobile != blank %}
+    <source media="(max-width: 767.98px)"
+            srcset="{%- if image_mobile.width >= 375 -%}{{ image_mobile | img_url: '375x' }} 375w,{%- endif -%}
+            {%- if image_mobile.width >= 750 -%}{{ image_mobile | img_url: '750x' }} 750w"{%- endif -%}
+            src="{{ image_mobile | img_url: '768x' }}" />
+  {% endif %}
+  <img
+    srcset="{%- render 'srcset', image: image -%}"
+    src="{{ image | img_url: '1500x' }}"
+    alt="{{ image.alt | escape }}"
+    loading="lazy"
+    width="{{ image.width }}"
+    height="{{ image.height }}"
+    {% if class %}
+      class="{{ class }}"
+    {% endif %}
+  >
+</picture>
+
+{%- if media_enabled -%}
+  </div>
+{%- endif -%}

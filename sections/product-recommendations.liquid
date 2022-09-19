@@ -1,0 +1,170 @@
+<link rel="stylesheet" href="{{ 'section-product-recommendations.css' | asset_url }}" media="print" onload="this.media='all'">
+
+<noscript>{{ 'section-product-recommendations.css' | asset_url | stylesheet_tag }}</noscript>
+
+{%- capture slider_options -%}
+{
+  "cellAlign": "left",
+  "contain": true,
+  "prevNextButtons": false,
+  "pageDots": false
+}
+{%- endcapture -%}
+
+{%- assign is_slider = false -%}
+{% if recommendations.products_count > 4 %}
+  {%- assign is_slider = true -%}
+{% endif %}
+
+<div class="gradient page-width">
+  <product-recommendations class="product-recommendations isolate" data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit={{ section.settings.products_to_show }}"> 
+    {% if recommendations.performed and recommendations.products_count > 0 %}
+    <div class="pt-md-7.5 pt-3.75 pb-md-7.5 pb-3.75">
+      <div class="d-flex justify-content-between align-items-center mb-1.5 mb-md-3.75">
+        <h2 class="d-flex align-items-center">
+          <span class="icon--triangle text-{{ section.settings.icon_color }} mr-0.5 mr-md-1"> </span>
+          <span>{{ section.settings.heading | escape }}</span>
+        </h2>
+        <a href="{{ collection.url }}" class="btn btn-outline-dark btn--with-icon text-nowrap">{{ section.settings.button_label }} {% render 'icon' with 'arrow', class: 'ml-0.5' %}</a>
+      </div>
+  
+      <div class="product-recomend__wrapper">
+        <div class="product-recomend__slider row flex-nowrap" data-flickity='{{ slider_options }}'>
+          {% for recommendation in recommendations.products limit: 4 %}
+            <div class="col-7 col-md-5 col-lg-3">
+              {% render 'card-product', card_product: recommendation %}
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    {% endif %}
+  </product-recommendations>
+</div>
+
+<script>
+  class ProductRecommendations extends HTMLElement {
+    constructor() {
+      super();
+
+      const handleIntersection = (entries, observer) => {
+        if (!entries[0].isIntersecting) return;
+        observer.unobserve(this);
+
+        fetch(this.dataset.url)
+          .then(response => response.text())
+          .then(text => {
+            const html = document.createElement('div');
+            html.innerHTML = text;
+            const recommendations = html.querySelector('product-recommendations');
+
+            if (recommendations && recommendations.innerHTML.trim().length) {
+              this.innerHTML = recommendations.innerHTML;
+
+              new Flickity('.product-recommendations [data-flickity]', {{ slider_options }});
+            }
+
+            if (html.querySelector('.grid__item')) {
+              this.classList.add('product-recommendations--loaded');
+            }
+          })
+          .catch(e => {
+            console.error(e);
+          });
+      }
+
+      new IntersectionObserver(handleIntersection.bind(this), {rootMargin: '0px 0px 200px 0px'}).observe(this);
+    }
+  }
+
+  customElements.define('product-recommendations', ProductRecommendations);
+</script>
+
+{% schema %}
+{
+  "name": "t:sections.product-recommendations.name",
+  "tag": "section",
+  "class": "section product-recomend",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "t:sections.product-recommendations.settings.paragraph__1.content"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "default": "You may also like",
+      "label": "t:sections.product-recommendations.settings.heading.label"
+    },
+    {
+      "type": "select",
+      "id": "icon_color",
+      "options": [
+        {"value": "blue", "label": "Blue"},
+        {"value": "red", "label": "Red"},
+        {"value": "pink", "label": "Pink"},
+        {"value": "orange", "label": "Orange"},
+        {"value": "cream", "label": "Cream"},
+        {"value": "light-green", "label": "Light green"},
+        {"value": "green", "label": "Green"},
+        {"value": "yellow", "label": "Yellow"},
+        {"value": "black-600", "label": "Black"}
+      ],
+      "label": "Icon color"
+    },
+    {
+      "type": "paragraph",
+      "content": "Button settings"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "default": "All Beers",
+      "label": "Button label"
+    },
+    {
+      "type": "range",
+      "id": "products_to_show",
+      "min": 2,
+      "max": 10,
+      "step": 1,
+      "default": 4,
+      "label": "t:sections.product-recommendations.settings.products_to_show.label"
+    },
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "default": 4,
+      "label": "t:sections.product-recommendations.settings.columns_desktop.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.product-recommendations.settings.header_mobile.content"
+    },
+    {
+      "type": "select",
+      "id": "columns_mobile",
+      "default": "2",
+      "label": "t:sections.product-recommendations.settings.columns_mobile.label",
+      "options": [
+        {
+          "value": "1",
+          "label": "t:sections.product-recommendations.settings.columns_mobile.options__1.label"
+        },
+        {
+          "value": "2",
+          "label": "t:sections.product-recommendations.settings.columns_mobile.options__2.label"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

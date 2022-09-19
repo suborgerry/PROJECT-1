@@ -1,0 +1,127 @@
+<div class="page-width">
+  <div class="row {{ section.settings.layout }}">
+
+    <div class="col-lg-6 mb-2.5 mb-md-0 position-relative h-fit-content">
+      {% render 'image' with section.settings.image, is_media: true %}
+      <span class="icon--triangle-2 text-blue mr-0.5 mr-md-1 mt-0.5 mt-md-1 position-absolute"> </span>
+    </div>
+
+    <div class="col-lg-6">
+      <div class="d-flex align-items-end h-100">
+        <div class="image-with-text__text{% if section.settings.layout == 'flex-lg-row-reverse' %} pl-0 ml-0{% endif %} bg-cream position-relative mt-md-2.5">
+          <span class="icon--circle bg-red position-absolute d-none d-lg-block"> </span>
+          {%- render 'partial-heading', with {
+            icon_color: section.settings.icon_color,
+            subheading: section.settings.subheading,
+            subheading_color: section.settings.subheading_color,
+            heading: section.settings.heading
+          } -%}
+
+          <div class="rte text-black-600">
+            {{ section.settings.content }}
+          </div>
+
+          {% if section.settings.enable_button %}
+            <div class="mt-1 mt-md-2.5">
+              <a href="{{ section.settings.button_url }}" class="btn btn-outline-dark btn--with-icon">
+                {{ section.settings.button_label }}
+                {%- render 'icon' with section.settings.button_icon, class: 'ml-0.5' -%}
+              </a>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Image with text",
+  "class": "image-with-text section-space",
+  "settings": [
+    {
+      "type": "select",
+      "id": "layout",
+      "options": [
+        {"value": "", "label": "Image + text"},
+        {"value": "flex-lg-row-reverse", "label": "Text + image"}
+      ],
+      "label": "Layout",
+      "default": ""
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading"
+    },
+    {
+      "type": "select",
+      "id": "subheading_color",
+      "options": [
+        {"value": "blue", "label": "Blue"},
+        {"value": "red", "label": "Red"},
+        {"value": "pink", "label": "Pink"},
+        {"value": "orange", "label": "Orange"},
+        {"value": "cream", "label": "Cream"},
+        {"value": "light-green", "label": "Light green"},
+        {"value": "green", "label": "Green"},
+        {"value": "yellow", "label": "Yellow"},
+        {"value": "black-600", "label": "Black"}
+      ],
+      "label": "Subheading color"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "select",
+      "id": "icon_color",
+      "options": [
+        {"value": "blue", "label": "Blue"},
+        {"value": "red", "label": "Red"},
+        {"value": "pink", "label": "Pink"},
+        {"value": "orange", "label": "Orange"},
+        {"value": "cream", "label": "Cream"},
+        {"value": "light-green", "label": "Light green"},
+        {"value": "green", "label": "Green"},
+        {"value": "yellow", "label": "Yellow"},
+        {"value": "black-600", "label": "Black"}
+      ],
+      "label": "Icon color"
+    },
+    {
+      "type": "richtext",
+      "id": "content",
+      "label": "Content"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_button",
+      "label": "Enable button"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button URL"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image with text"
+    }
+  ]
+}
+{% endschema %}

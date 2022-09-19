@@ -1,0 +1,180 @@
+<div class="d-md-flex h-100">
+ <div class="page-width side-menu__inner h-100">
+   <div class="d-flex align-items-center">
+     <div class="header__logo d-lg-none mr-auto">
+       {{ section.settings.logo }}
+     </div>
+
+     <div class="d-flex align-items-center">
+       {% for block in section.blocks %}
+
+         {%- if block.type != 'button' -%}
+           {%- continue -%}
+         {%- endif -%}
+
+         <a href="{{ block.settings.url }}" class="btn {{ block.settings.style }} mr-1.5 d-none d-lg-inline-flex">
+           {{- block.settings.label -}}
+         </a>
+         {% if block.settings.mobile_icon != blank %}
+           <a href="{{ block.settings.url }}" class="btn btn-inline text-black-600 d-lg-none">
+             {{- block.settings.mobile_icon -}}
+           </a>
+         {% endif %}
+       {% endfor %}
+
+
+       <a href="{{ routes.cart_url }}" class="btn btn-inline text-cream position-relative">
+         {%- render 'icon' with 'cart' -%}
+         <span class="visually-hidden">{{ 'templates.cart.cart' | t }}</span>
+         <div class="bg-red media--circle text-light position-absolute h-circle">
+            {%- if cart.item_count < 100 -%}
+              <span data-cart-bubble aria-hidden="true">
+                {%- if cart.item_count > 0 -%}
+                  {{- cart.item_count -}}
+                {%- endif -%}
+              </span>
+            {%- endif -%}
+            <span class="visually-hidden">{{ 'sections.header.cart_count' | t: count: cart.item_count }}</span>
+          </div>
+       </a>
+
+       <button class="btn btn-inline text-cream ml-md-1.5" data-menu-toggler>
+         {%- render 'icon' with 'exit' -%}
+       </button>
+     </div>
+   </div>
+
+   <div class="mt-3.75 mt-md-2.5">
+     <ul class="list-unstyled w-100" role="list">
+       {%- for link in section.settings.menu.links -%}
+
+       {% assign has_submenu = false %}
+       {% if link.links.size > 0 %}
+         {% assign has_submenu = true %}
+       {% endif %}
+
+       <li>
+         <a href="{{ link.url }}" class="font-header text-3.125 font-bold text-cream {% if has_submenu %} d-flex align-items-center{% endif %}"{% if has_submenu %} data-submenu{% endif %}{% if link.current %} aria-current="page"{% endif %}>
+           {{ link.title | escape | upcase }}
+
+           {% if has_submenu %}
+             {% render 'icon' with 'chevron-down', class: 'ml-1' %}
+           {% endif %}
+         </a>
+
+         {% if has_submenu %}
+           <div class="side-menu__submenu">
+             <div class="overflow-hidden">
+               <ul class="pt-2 pb-2 pl-0">
+                 {%- for childlink in link.links -%}
+                   <li class="{% unless forloop.last %}mb-1{% endunless %}">
+                     <a href="{{ childlink.url }}" class="btn btn-inline text-cream text-2" {% if childlink.current %} aria-current="page"{% endif %}>
+                       {{ childlink.title | escape }}
+                     </a>
+                   </li>
+                 {%- endfor -%}
+               </ul>
+             </div>
+           </div>
+         {% endif %}
+         {%- endfor -%}
+     </ul>
+     <div class="side-menu__info text-cream mt-auto pt-4 w-100">
+       {% for block in section.blocks %}
+
+         {%- if block.type != 'info-line' -%}
+           {%- continue -%}
+         {%- endif -%}
+
+         <div class="d-flex mb-1 text-md-1.125">
+           <div>
+             {%- render 'icon' with block.settings.icon -%}
+           </div>
+           <div class="pl-1">
+             {{ block.settings.content }}
+           </div>
+         </div>
+
+       {% endfor %}
+     </div>
+   </div>
+ </div>
+</div>
+
+{% schema %}
+{
+  "name": "Side menu",
+  "class": "side-menu position-fixed bg-black-600 h-100 w-100 overflow-hidden",
+  "settings": [
+    {
+      "type": "text",
+      "id": "logo",
+      "label": "Logo (SVG)"
+    },
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Menu"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Button",
+      "type": "button",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "URL"
+        },
+        {
+          "type": "select",
+          "id": "style",
+          "options": [
+            { "value": "btn-dark", "label": "Dark" },
+            { "value": "btn-outline-dark", "label": "Outline dark" },
+            { "value": "btn-cream", "label": "Cream" },
+            { "value": "btn-outline-cream", "label": "Outline cream" }
+          ],
+          "label": "Style",
+          "default": "btn-dark"
+        },
+        {
+          "type": "text",
+          "id": "mobile_icon",
+          "label": "Mobile icon",
+          "info": "Button will be hidden for mobile unless icon is used"
+        }
+      ]
+    },
+    {
+      "name": "Info text",
+      "type": "info-line",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "options": [
+            {"value": "phone", "label": "Phone"},
+            {"value": "email", "label": "Email"},
+            {"value": "pin", "label": "Pin"},
+            {"value": "calendar", "label": "Calendar"}
+          ],
+          "default": "phone",
+          "label": "Icon"
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Content"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

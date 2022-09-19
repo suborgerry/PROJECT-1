@@ -1,0 +1,47 @@
+{%- capture slider_options -%}
+{
+  "cellAlign": "left",
+  "contain": true,
+  "prevNextButtons": false,
+  "pageDots": false
+}
+{%- endcapture -%}
+
+{%- assign is_slider = true -%}
+
+<div class="page-width">
+  <div class="slide-show__slider row flex-nowrap" data-flickity='{{ slider_options }}'>
+    {% for block in section.blocks %}
+      <div class="col-11 col-lg-9 col-md-9">
+        {% render 'image' with block.settings.image, is_media: true %}
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Slide Show",
+  "class": "slide-wrapper section-space overflow-hidden",
+  "settings": [
+    ],
+    "blocks": [
+        {
+            "type": "text",
+            "name": "Slide Item",
+            "settings": [
+                {
+                    "type": "image_picker",
+                    "id": "image",
+                    "label": "Image"
+                }
+            ]
+        }
+    ],
+	"presets": [
+ 		{
+			"name": "Slide Show"
+		}
+	]
+}
+{% endschema %}

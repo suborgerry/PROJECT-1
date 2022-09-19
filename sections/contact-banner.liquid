@@ -1,0 +1,192 @@
+<section class="contact-banner bg-light">
+    <div class="page-width">
+        <div class="row row--md">
+          <div class="col-lg-8">
+            <h5 class="mb-0.5 mb-md-1 text-1.125 text-{{ section.settings.subheading_color }}">Contact Us</h5>
+            <h1 class="mt-1">
+              {{- section.settings.title | escape -}}
+            </h1>
+          </div>
+    
+          <div class="col-lg-4 mt-md-2.5 mt-ms-2.5">
+            <div class="mb-2.5 text-black-600">
+                {%- for block in section.blocks -%}
+                    {%- case block.type -%}
+                    {% when '@app' %}
+                        {% render block %}
+                    {% when 'tel' %}
+                        <div class="contact-banner_box">
+                            <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M22.0004 17.5616V20.5616C22.0016 20.8401 21.9445 21.1157 21.8329 21.3709C21.7214 21.6261 21.5577 21.8552 21.3525 22.0434C21.1473 22.2317 20.905 22.3751 20.6412 22.4643C20.3773 22.5535 20.0978 22.5866 19.8204 22.5616C16.7433 22.2272 13.7874 21.1757 11.1904 19.4916C8.77425 17.9562 6.72576 15.9077 5.19042 13.4916C3.5004 10.8828 2.44866 7.91257 2.12042 4.82158C2.09543 4.54504 2.1283 4.26634 2.21692 4.0032C2.30555 3.74007 2.44799 3.49827 2.63519 3.2932C2.82238 3.08813 3.05023 2.92429 3.30421 2.8121C3.5582 2.69991 3.83276 2.64184 4.11042 2.64158H7.11042C7.59573 2.6368 8.06621 2.80866 8.43418 3.12511C8.80215 3.44156 9.0425 3.88102 9.11042 4.36158C9.23704 5.32164 9.47187 6.2643 9.81042 7.17158C9.94497 7.5295 9.97408 7.91849 9.89433 8.29246C9.81457 8.66642 9.62928 9.00969 9.36042 9.28158L8.09042 10.5516C9.51398 13.0551 11.5869 15.128 14.0904 16.5516L15.3604 15.2816C15.6323 15.0127 15.9756 14.8274 16.3495 14.7477C16.7235 14.6679 17.1125 14.697 17.4704 14.8316C18.3777 15.1701 19.3204 15.405 20.2804 15.5316C20.7662 15.6001 21.2098 15.8448 21.527 16.2191C21.8441 16.5934 22.0126 17.0712 22.0004 17.5616Z" stroke="#13130C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg> 
+                            <p class="text-1.125">{{block.settings.tel}}</p>
+                        </div>
+                    {% when 'mail' %}
+                        <div class="contact-banner_box mt-1">
+                            <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4 4.6416H20C21.1 4.6416 22 5.5416 22 6.6416V18.6416C22 19.7416 21.1 20.6416 20 20.6416H4C2.9 20.6416 2 19.7416 2 18.6416V6.6416C2 5.5416 2.9 4.6416 4 4.6416Z" stroke="#13130C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M22 6.6416L12 13.6416L2 6.6416" stroke="#13130C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <a href="mailto:{{block.settings.mail_link}}" class="text-1.125 text-black-600">{{block.settings.mail}}</a>
+                        </div>
+                    {% when 'map' %}
+                    <div class="contact-banner_box mt-1">
+                        <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_1874_169)">
+                            <path d="M21 10.6417C21 17.6417 12 23.6417 12 23.6417C12 23.6417 3 17.6417 3 10.6417C3 8.25471 3.94821 5.96553 5.63604 4.2777C7.32387 2.58987 9.61305 1.64166 12 1.64166C14.3869 1.64166 16.6761 2.58987 18.364 4.2777C20.0518 5.96553 21 8.25471 21 10.6417Z" stroke="#13130C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M12 13.6417C13.6569 13.6417 15 12.2985 15 10.6417C15 8.98481 13.6569 7.64166 12 7.64166C10.3431 7.64166 9 8.98481 9 10.6417C9 12.2985 10.3431 13.6417 12 13.6417Z" stroke="#13130C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </g>
+                            <defs>
+                            <clipPath id="clip0_1874_169">
+                            <rect width="24" height="24" fill="white" transform="translate(0 0.641663)"/>
+                            </clipPath>
+                            </defs>
+                        </svg>
+                        <p class="text-1.125">{{block.settings.map}}</p>
+                    </div>
+                    {% when 'timetable' %}
+                        <div class="contact-banner_box mt-1">
+                            <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M16.6365 3.05081C16.6365 2.49853 16.1888 2.05081 15.6365 2.05081C15.0843 2.05081 14.6365 2.49853 14.6365 3.05081V3.86899H9.36381V3.05081C9.36381 2.49853 8.9161 2.05081 8.36381 2.05081C7.81153 2.05081 7.36381 2.49853 7.36381 3.05081V3.86899H5.63654C4.0801 3.86899 2.81836 5.13074 2.81836 6.68718V10.3235V19.4144C2.81836 20.9709 4.0801 22.2326 5.63654 22.2326H18.3638C19.9203 22.2326 21.182 20.9709 21.182 19.4144V10.3235V6.68718C21.182 5.13074 19.9203 3.86899 18.3638 3.86899H16.6365V3.05081ZM19.182 9.32354V6.68718C19.182 6.23531 18.8157 5.86899 18.3638 5.86899H16.6365V6.68718C16.6365 7.23946 16.1888 7.68718 15.6365 7.68718C15.0843 7.68718 14.6365 7.23946 14.6365 6.68718V5.86899H9.36381V6.68718C9.36381 7.23946 8.9161 7.68718 8.36381 7.68718C7.81153 7.68718 7.36381 7.23946 7.36381 6.68718V5.86899H5.63654C5.18467 5.86899 4.81836 6.23531 4.81836 6.68718V9.32354H19.182ZM4.81836 11.3235H19.182V19.4144C19.182 19.8663 18.8157 20.2326 18.3638 20.2326H5.63654C5.18467 20.2326 4.81836 19.8663 4.81836 19.4144V11.3235Z" fill="#13130C"/>
+                            </svg>
+                            <p class="text-1.125">
+                                <span class="font-bold">{{block.settings.timetable_title}}</span><br>
+                                {{block.settings.timetable_first}}<br>
+                                {{block.settings.timetable_second}}
+                            </p>
+                        </div>
+                      {% when 'text' %}
+                      <div class="rte mt-1 mt-md-2.5 text-1.125 d-none d-md-block pr-1">
+                          {{ block.settings.content }}
+                      </div>
+                    {% endcase %}
+                {%- endfor -%}
+            </div>
+            <a href="{{ routes.all_products_collection_url }}" class = "d-none text-black-600 text-1.125">{{- section.settings.text | escape -}}</a>
+          </div>
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{
+  "name": "Contact Banner",
+  "settings": [
+    {
+      "type": "select",
+      "id": "subheading_color",
+      "options": [
+        {"value": "blue", "label": "Blue"},
+        {"value": "red", "label": "Red"},
+        {"value": "pink", "label": "Pink"},
+        {"value": "orange", "label": "Orange"},
+        {"value": "cream", "label": "Cream"},
+        {"value": "light-green", "label": "Light green"},
+        {"value": "green", "label": "Green"},
+        {"value": "yellow", "label": "Yellow"},
+        {"value": "black-600", "label": "Black"}
+      ],
+      "default": "blue",
+      "label": "Subheading color"
+    },
+    {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "Get in touch"
+    },
+    {
+        "type": "text",
+        "id": "text",
+        "label": "Text",
+        "default": "If you’d like to make a booking please click here!"
+    }
+  ],
+  "blocks": [
+    {
+        "type": "@app"
+    },
+    {
+        "type": "tel",
+        "name": "Phone",
+        "settings": [
+            {
+                "type": "text",
+                "id": "tel",
+                "label": "Phone",
+                "default": "03 9484 7803"
+            }
+        ]
+    },
+    {
+        "type": "mail",
+        "name": "E-mail",
+        "settings": [
+            {
+                "type": "text",
+                "id": "mail",
+                "label": "E-mail",
+                "default": "hello@tallboyandmoose.com.au"
+            },
+            {
+                "type": "url",
+                "id": "mail_link",
+                "label": "Link mail"
+            }
+        ]
+    },
+    {
+        "type": "map",
+        "name": "Geolocation",
+        "settings": [
+            {
+                "type": "text",
+                "id": "map",
+                "label": "Geolocation",
+                "default": "270 Raglan St. Preston, VIC 3072 Australia"
+            }
+        ]
+    },
+    {
+        "type": "timetable",
+        "name": "Timetable",
+        "settings": [
+            {
+                "type": "text",
+                "id": "timetable_title",
+                "label": "Timetable Title",
+                "default": "Venue Opening Hours"
+            },
+            {
+                "type": "text",
+                "id": "timetable_first",
+                "label": "Timetable Wed-Fri",
+                "default": "Wed - Fri 4PM til late"
+            },
+            {
+                "type": "text",
+                "id": "timetable_second",
+                "label": "Timetable Sat-Sun",
+                "default": "Sat - Sun 12PM til late"
+            }
+        ]
+    },
+    {
+      "name": "Text",
+      "type": "text",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Content"
+        }
+      ]
+    }
+  ],
+  "presets": [
+        {
+            "name": "Contact Banner"
+        }
+    ]
+}
+{% endschema %}

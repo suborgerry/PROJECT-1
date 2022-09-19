@@ -1,0 +1,87 @@
+{%- capture slider_options -%}
+{
+  "cellAlign": "left",
+  "contain": true,
+  "prevNextButtons": false,
+  "pageDots": false
+}
+{%- endcapture -%}
+
+{%- assign is_slider = false -%}
+{% if section.settings.collection.products.size > 4 %}
+  {%- assign is_slider = true -%}
+{% endif %}
+
+<div class="page-width">
+  <div class="mb-1.5 mb-md-3.75 d-flex align-items-center justify-content-between">
+    <h2 class="mb-0 d-flex align-items-center">
+      <span class="icon--triangle text-{{ section.settings.icon_color }} mr-0.5 mr-md-1"> </span>
+      <span>{{- section.settings.heading -}}</span>
+    </h2>
+
+    <div class="d-flex align-items-center">
+      {% if is_slider %}
+        <div class="d-none d-lg-block mr-2.5">
+          <button class="btn btn-inline mr-1" data-slider-change="prev">{%- render 'icon' with 'arrow-lg', class: 'icon--revers d-block' -%}</button>
+          <button class="btn btn-inline" data-slider-change="next">{%- render 'icon' with 'arrow-lg', class: 'd-block' -%}</button>
+        </div>
+      {% endif %}
+
+      <a href="{{ collection.url }}" class="btn btn-outline-dark btn--with-icon">{{ section.settings.button_label }} {% render 'icon' with 'arrow', class: 'ml-0.5' %}</a>
+    </div>
+  </div>
+
+  <div class="featured-collection__slider row flex-nowrap" data-flickity='{{ slider_options }}'>
+    {% for product in section.settings.collection.products %}
+      <div class="col-7 col-md-5 col-lg-3">
+        {% render 'card-product', card_product: product %}
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Featured collection",
+  "class": "featured-collection section-space overflow-hidden",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "select",
+      "id": "icon_color",
+      "options": [
+        {"value": "blue", "label": "Blue"},
+        {"value": "red", "label": "Red"},
+        {"value": "pink", "label": "Pink"},
+        {"value": "orange", "label": "Orange"},
+        {"value": "cream", "label": "Cream"},
+        {"value": "light-green", "label": "Light green"},
+        {"value": "green", "label": "Green"},
+        {"value": "yellow", "label": "Yellow"},
+        {"value": "black-600", "label": "Black"}
+      ],
+      "label": "Icon color"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "default": "All Beers",
+      "label": "Button label"
+    }
+  ],
+	"presets": [
+ 		{
+			"name": "Featured collection"
+		}
+	]
+}
+{% endschema %}

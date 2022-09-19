@@ -1,0 +1,246 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "16530384862ce1c538": {
+      "type": "banner",
+      "settings": {
+        "subheading_color": "blue",
+        "subtitle": "",
+        "title": "G’DAY, WE ARE TALLBOY & MOOSE",
+        "content": "We make beer. Bloody good beer. And it all started with tall Dan and Canadian Steve hitting it off while working together in the Melbourne craft beer scene…",
+        "btn_text": "",
+        "btn_link": "",
+        "liquid": ""
+      }
+    },
+    "16530397139b9d49e8": {
+      "type": "who-we-are",
+      "settings": {
+        "subheading": "Who we are",
+        "subheading_color": "blue",
+        "heading": "TALLBOY & MOOSE. WE MAKE BEER.",
+        "icon_color": "blue",
+        "image": "shopify:\/\/shop_images\/Illustrations.png",
+        "second_text": "We are proud to be a 100% independently owned brewery. Everything we produce gets brewed and canned right here in our little taproom in Preston by a small, passionate team, that loves to be creative. We believe beer is all about sharing an experience, coming together and having fun.",
+        "first_text": "That’s exactly what we strive to do every day and what the heart and soul of Tallboy and Moose really is. We encourage everyone to choose fresh, locally-made beer and be open to explore the world of flavour, that awaits you."
+      }
+    },
+    "165304391611568b1d": {
+      "type": "slide-show",
+      "blocks": {
+        "6ac8aeb7-d480-44f2-9790-d9c423547ce5": {
+          "type": "text",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/slide-1.jpg"
+          }
+        },
+        "14870bcb-7630-41da-979c-543b7c91b6cb": {
+          "type": "text",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Rectangle_3_1.jpg"
+          }
+        },
+        "2eab2868-cd85-4047-98b8-1663eaf61220": {
+          "type": "text",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/slide-1_bf812cce-3767-44dc-b705-6fe043f60267.jpg"
+          }
+        },
+        "8c4971c9-e2fc-4013-952d-d8a9dc2cfd72": {
+          "type": "text",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/slide-1_bf812cce-3767-44dc-b705-6fe043f60267.jpg"
+          }
+        },
+        "342072fd-6e54-4659-91f8-8ffc774f7b72": {
+          "type": "text",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/slide-1_bf812cce-3767-44dc-b705-6fe043f60267.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "6ac8aeb7-d480-44f2-9790-d9c423547ce5",
+        "14870bcb-7630-41da-979c-543b7c91b6cb",
+        "2eab2868-cd85-4047-98b8-1663eaf61220",
+        "8c4971c9-e2fc-4013-952d-d8a9dc2cfd72",
+        "342072fd-6e54-4659-91f8-8ffc774f7b72"
+      ],
+      "settings": {}
+    },
+    "1653046966674907b3": {
+      "type": "timeline",
+      "blocks": {
+        "49b78c0c-6a87-415e-b7b6-4408c7e8a2ba": {
+          "type": "text",
+          "settings": {
+            "data": "2022",
+            "content": "As the World and Melbourne opens back up, we’re getting new team members on board, take part in beer festivals and continue to collaborate with amazing businesses. A collab close to our heart was our GABS 2022 beer, a Wattleseed Amber Lager, that was inspired by and brewed with Kevin Williams, a Waradjuri artist and wattleseed farmer."
+          }
+        },
+        "9af2f161-24e4-4172-bbd2-08cf398be510": {
+          "type": "text",
+          "settings": {
+            "data": "2021",
+            "content": "Driven by demand and the COVID pandemic, we bought our own canning line and were able to release a lot more brews in tins. While Melbourne was in lockdown and our taproom shut, we were lucky enough to have the support of our local community and operate as a bottle shop. In 2021 we also celebrated our 5th birthday with a very special beer - our 20% Birthday Suit Eisbock."
+          }
+        },
+        "fdf2f1f2-fe1d-4035-8b7a-ce7898935c4d": {
+          "type": "text",
+          "settings": {
+            "data": "2019",
+            "content": "Tallboy and Moose started canning some of their releases with the help of an external company, that brought in equipment. Tallboy tins start appearing in good venues and bottle shops across Victoria and via distributors in the rest of Australia."
+          }
+        },
+        "deb5141c-bb6c-4fba-9bb6-4cb2ae361b6d": {
+          "type": "text",
+          "settings": {
+            "data": "2016",
+            "content": "After setting up in their new taproom, Tallboy and Moose launched officially in October 2016. Their first beer was Deep Steep, a chamomile infused American Amber. At this stage, everything they produced went into kegs and got poured either at the taproom or in venues around Melbourne."
+          }
+        },
+        "b1941d12-022a-4296-b2d2-1251124af9d3": {
+          "type": "text",
+          "settings": {
+            "data": "2015",
+            "content": "Eventually, in early 2015 they realised they needed to go bigger and they started looking for brewing premises in the northern suburbs, where the craft beer scene was just starting to kick off. Dan moved to Preston, where they found a row of warehouses, that would later become the Tallboy and Moose brewpub."
+          }
+        },
+        "d312a7b0-d52a-40c6-9753-d30304785037": {
+          "type": "text",
+          "settings": {
+            "data": "2013",
+            "content": "Soon Steve and Dan started their brewing partnership 'Make beer', an experimental nanobrewery, that released small run beers and speciality kegs."
+          }
+        },
+        "8b5b6018-d632-41e8-a99d-e8895d574f3e": {
+          "type": "text",
+          "settings": {
+            "data": "2012",
+            "content": "It all started with tall Dan and Canadian Steve hitting it off while working together in the Melbourne craft beer scene in 2012, just after Steve aka Moose had arrived from Toronto. Their work took them in all sorts of directions - BrewCult, Phoenix Beers, Southern Bay and Hawkers - but they always stayed in touch and discussed ideas for future projects."
+          }
+        }
+      },
+      "block_order": [
+        "49b78c0c-6a87-415e-b7b6-4408c7e8a2ba",
+        "9af2f161-24e4-4172-bbd2-08cf398be510",
+        "fdf2f1f2-fe1d-4035-8b7a-ce7898935c4d",
+        "deb5141c-bb6c-4fba-9bb6-4cb2ae361b6d",
+        "b1941d12-022a-4296-b2d2-1251124af9d3",
+        "d312a7b0-d52a-40c6-9753-d30304785037",
+        "8b5b6018-d632-41e8-a99d-e8895d574f3e"
+      ],
+      "settings": {
+        "subheading": "Our History",
+        "subheading_color": "blue",
+        "heading": "HOW WE GOT HERE",
+        "icon_color": "blue",
+        "svg": "<svg width=\"51\" height=\"52\" viewbox=\"0 0 51 52\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\"> <circle opacity=\"0.3\" cx=\"25.5\" cy=\"25.6416\" r=\"25.5\" fill=\"#E41B12\"><\/circle> <circle cx=\"25.5\" cy=\"25.6416\" r=\"11.5\" fill=\"#E41B12\"><\/circle> <\/svg>"
+      }
+    },
+    "166130168022890f7f": {
+      "type": "image-with-text",
+      "settings": {
+        "layout": "",
+        "image": "shopify:\/\/shop_images\/Pic_a7bf0426-e37a-408d-956e-8586adea8c9c.jpg",
+        "subheading": "",
+        "subheading_color": "blue",
+        "heading": "Want to learn more about us?",
+        "icon_color": "blue",
+        "content": "<p><em>We run occassional brewery tours, masterclasses and are always open to exciting projects and events. Want to learn more? Get in touch via the button below!<\/em><\/p>",
+        "enable_button": true,
+        "button_label": "Get in touch",
+        "button_url": "shopify:\/\/pages\/contact"
+      }
+    },
+    "165304919577df6bc0": {
+      "type": "text-and-list-of-images",
+      "blocks": {
+        "858f940e-89e0-40d9-8099-aabd519287ee": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Instagram_Item.jpg"
+          }
+        },
+        "ab0f1bd1-11a5-40f1-985a-7a92e3097b75": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/2.jpg"
+          }
+        },
+        "b93fd080-33e6-49c2-a00a-1eaa665dcc3e": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/3.jpg"
+          }
+        },
+        "e0cd9413-5320-4e93-a146-d9a757be1b27": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/4.jpg"
+          }
+        },
+        "da743161-9fa7-43a3-b5c4-83ab00eb92a5": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/5.jpg"
+          }
+        },
+        "9c59fab0-0f05-4025-9976-8de42786c441": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/6.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "858f940e-89e0-40d9-8099-aabd519287ee",
+        "ab0f1bd1-11a5-40f1-985a-7a92e3097b75",
+        "b93fd080-33e6-49c2-a00a-1eaa665dcc3e",
+        "e0cd9413-5320-4e93-a146-d9a757be1b27",
+        "da743161-9fa7-43a3-b5c4-83ab00eb92a5",
+        "9c59fab0-0f05-4025-9976-8de42786c441"
+      ],
+      "settings": {
+        "subheading": "Instagram",
+        "subheading_color": "blue",
+        "heading": "Get Social",
+        "icon_color": "blue",
+        "content": "<p>Sonsectetur adipiscing elit. Sed magna tempus interdum id volutpat diam at nullam.<\/p>",
+        "enable_button": true,
+        "button_label": "Instagram",
+        "button_url": "",
+        "button_icon": "instagram"
+      }
+    },
+    "165303865900f2d0fd": {
+      "type": "newsletter",
+      "settings": {
+        "subheading": "Newsletter",
+        "subheading_color": "blue",
+        "heading": "GET MOOSE MAIL",
+        "content": "<p>Stay up to date on your favourite beers, special offers and events by joining our brewsletter!<\/p>",
+        "bg_image": "shopify:\/\/shop_images\/Cans.png",
+        "icon_1": "<svg width=\"155\" height=\"151\" viewbox=\"0 0 155 151\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\"><g><path d=\"M88.6199 107.192c2.7455.942 5.5477 1.71 8.39 2.3.68-5 2.16-10.4305 9.0001-12.4205 6-1.71 9.8 3.2905 16.17 1.5601 5-1.36 5.68-11-9.74-13.4-15.4201-2.4-28.9001 6.34-33.0001 15.7504 2.5387 2.752 5.681 4.877 9.18 6.21Z\" fill=\"#EE79AD\"><\/path><path d=\"M143.21 104.982c-2.351-.134-4.708.072-7 .61-12.79 2.6-23.36 7.13-39.1802 3.9-2.8424-.589-5.6446-1.358-8.39-2.3-3.4847-1.338-6.6128-3.463-9.14-6.21-9.28-9.5303-14.82-26.4102-4.74-34.3202 7.7-6 14.51 1.6299 17.86 4.7099 17.2302 15.84 59.7502-14.39 58.8302-24.39-.33-3.7-5.87-4.79-7-1.38-.86 2.65-4.76 2.0001-5.9-.8299-2.21-4.78 5.56-7.0001 13.25-14.4301s-.26-14.37-6.91-12.26c-12.91 4.09-17.07.74-25.66-3.64C104.557 3.80267 86.5323-1.17428 68.4789.428185 50.4255 2.03065 33.5597 10.1045 20.9898 23.1617 14.143 30.2686 8.76345 38.6548 5.15839 47.8412S-.206599 66.8344-.020872 76.7011C.164854 86.5678 2.29259 96.3012 6.24082 105.345c3.94818 9.045 9.63958 17.223 16.74898 24.067 14.3573 13.823 33.6173 21.378 53.5441 21.003s38.8891-8.649 52.7161-23.003c5.61-5.62 5.27-7.47 8.89-5.23 12.99 8 21.22-15.02 5.07-17.2ZM97.3298 34.6817c6.4702-7.21 18.9302-5.56 24.8602 2.18 5.28 8.14 1.93 18.4501-8 21.7901-15.3402 8.46-28.1602-12.5201-16.8602-23.9701Zm-11.81 12.13c-.1943 2.3437-.6642 4.6563-1.4 6.89-3.0878-1.9066-6.7984-2.531-10.34-1.74-1.5694.3299-3.0866.8715-4.51 1.61-3.124 1.5334-5.7133 3.9728-7.43 7-.18.34-.33.7-.48 1.06-11.54-6.54-11.89-28.24 5.93-29.74 9.18-.79 19.22 4.58 18.23 14.92Zm-42.33-22.25c2.93-7.07 11.66-15.12998 19.77-14.51 3.58.28 6.46 4.66 4.62 8.26-1.67 3.26-5.23 3.85-8.29 4.58-8 1.89-13.71 6.5801-17.73 13.3901.76-3.98-.02-7.7401 1.63-11.7201Zm-13.14 69.52c-5.75-4.75-6.11-14.22-2.39-20.28 3.72-6.06 15.95-11.93 24.37-3.79 19.16 16.07-4.18 41.4903-21.98 24.07Z\" fill=\"#0054A3\"><\/path><path d=\"M114.22 58.6518c9.9-3.34 13.25-13.65 8-21.79-5.93-7.74-18.39-9.3901-24.8598-2.1801-11.33 11.45 1.49 32.4301 16.8598 23.9701Zm3.91-21.55c1.83 1 2.65 4.42 2.65 4.42 2.18 7.58-11 9.44-11.55 1.77-.83-8.1 7.07-7.18 8.9-6.19Z\" fill=\"#fff\"><\/path><path d=\"M120.78 41.5217s-.82-3.4301-2.65-4.4201c-1.83-.99-9.73-1.9099-8.9 6.1901.54 7.69 13.73 5.81 11.55-1.77Z\" fill=\"#13130C\"><\/path><path d=\"M61.36 61.6115c.15-.36.3-.72.48-1.06 1.7167-3.0272 4.306-5.4666 7.43-7-1.4044.0587-2.7769-.4296-3.8288-1.3621-1.0518-.9325-1.7011-2.2366-1.8112-3.6379-.93-8.19 6.83-7.14 8.64-6.11 1.81 1.03 2.67 4.5 2.67 4.5.3109.8563.3668 1.7844.161 2.6719-.2059.8874-.6648 1.6961-1.321 2.3281 3.5417-.791 7.2523-.1666 10.34 1.74.7359-2.2337 1.2058-4.5462 1.4-6.8899 1-10.34-9-15.7101-18.23-14.9401-17.82 1.52-17.44 23.22-5.93 29.76Z\" fill=\"#fff\"><\/path><path d=\"M74.9399 46.9115s-.85-3.48-2.67-4.5c-1.82-1.02-9.57-2.08-8.64 6.11.1101 1.4013.7593 2.7054 1.8112 3.6379 1.0518.9325 2.4243 1.4207 3.8288 1.3621 1.4234-.7385 2.9406-1.2801 4.51-1.61.6562-.632 1.115-1.4407 1.3209-2.3281.2059-.8875.15-1.8156-.1609-2.6719ZM59.2901 22.8917c3.06-.73 6.6199-1.32 8.2899-4.58 1.84-3.6-.9999-8-4.6199-8.26-8.11-.61997-16.8401 7.44-19.7701 14.51-1.65 4-.8699 7.7401-1.6299 11.7201 4.02-6.81 9.7-11.5001 17.73-13.3901Z\" fill=\"#13130C\"><\/path><path d=\"M52.0301 69.9818c-8.42-8.14-20.57-2.4-24.37 3.79-3.8 6.19-3.36 15.5299 2.39 20.2799 17.8 17.4503 41.14-7.9699 21.98-24.0699Z\" fill=\"#E41B12\"><\/path><\/g><\/svg>",
+        "icon_2": "<svg width=\"213\" height=\"190\" viewbox=\"0 0 213 190\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\"><g><path d=\"M14.54 152.34c.1789-.775.3722-1.545.5797-2.309 1.0701-3.832 2.6344-7.507 4.6534-10.933.2387-.481.5861-.899 1.0144-1.222.3951-.224.8316-.365 1.2828-.415 4.2938-.694 8.7272.173 13.0478-.419 2.5168-.433 4.9851-1.113 7.3693-2.03l10.7345-3.725c3.7571-1.297 7.5518-2.611 11.5075-2.691 3.9556-.081 8.1475 1.302 10.5144 4.484 1.3794 1.841 2.0289 4.118 2.63 6.346.3065 1.06.5432 2.139.7085 3.23.165 1.073.1359 2.167-.0859 3.23-1.0734 13.533-12.3071 14.421-22.8163 16.187-1.0734.172-2.0825.355-3.0754.538-4.8305.845-9.2317 1.577-13.7402 1.771-.8963.043-1.8034.059-2.7158.054-6.269-1.012-13.1767-2.358-17.7979-8.29L14.54 152.34Z\" fill=\"#fff\"><\/path><path d=\"M31.1625 139.2c-.1933 3.513-.1771 7.035.0483 10.546.388 4.489 1.3253 8.913 2.791 13.172-4.8305-6.643-5.5766-16.09-2.8393-23.718ZM40.8179 137.752c6.2314 6.46 9.5483 16.278 9.4732 25.198-1.2282-4.921-2.7189-9.773-4.4656-14.534-1.4446-3.664-3.1171-7.232-5.0076-10.686v.022ZM59.9526 130.351c6.4408 5.684 10.4716 14.889 9.1244 23.524-.2763-2.118-.6669-4.218-1.1701-6.293-1.5296-6.218-4.4977-11.843-7.9328-17.226l-.0215-.005Z\" fill=\"#DCDCDC\"><\/path><path d=\"M75.4207 132.999c-8.797 14.276-27.7864 18.647-43.432 15.745-5.3468-.931-10.4696-2.869-15.0981-5.711 9.7433 4.423 20.5379 5.984 31.1302 4.5 10.4715-1.405 20.7552-6.023 27.3999-14.534Z\" fill=\"#DCDCDC\"><\/path><path d=\"M51.5259 134.237c5.9362 6.336 9.0331 15.912 8.7003 24.536-.5367-2.153-1.0734-4.269-1.6102-6.368-1.6913-6.299-4.069-12.392-7.0901-18.168Z\" fill=\"#DCDCDC\"><\/path><path d=\"M113.824 118.034c23.782 24.606 26.53-12.602 39.97-6.32 15.479 7.235-18.378 20.698-5.802 31.222 12.575 10.524 29.622-30.22 29.622-30.22s-8.787 33.574 2.367 34.478c11.153.904 25.827-54.4279 32.364-26.221 6.538 28.207-36.932 72.903-72.259 48.889-15.898-9.027-24.776-33.036-40.6304-40.238M97.6469 120.812C79.6397 100.894 49.057 80.0244 46.6256 51.4135 42.7612 5.86214 99.8636 0 99.8636 0S60.1834 33.0465 68.1645 37.0677c7.9811 4.0211 23.7824-14.7173 38.1665-6.1744 7.471 4.4356-48.52 29.3215-29.171 32.3252 14.8674 2.3147 23.401-13.3069 23.401-13.3069s-2.372 11.8965-4.7121 16.3429c-12.3716 23.4809 3.698 36.0665 12.8381 44.5775l-11.0401 9.98Z\" fill=\"#13130C\"><\/path><path d=\"M119.862 133.37c-.435.539-4.89-.538-5.518-1.179-1.138-1.179.22-2.745.387-4.075.071-3.067.57-6.109 1.481-9.038l7.128-14.701-13.037 4.926-.397-20.3537-7.117 12.6667s-5.5502-3.1225-5.7756-3.5047c-.8015-1.3466-2.083-2.3375-3.5853-2.7723-4.7662 9.307-14.6205-7.7516-23.0364-3.5151 3.843.9905 2.147 3.4021 1.0735 3.9727-14.6526 7.8214-23.2081-3.0738-42.8737-4.3065-5.3673-21.193-42.1009-3.3428-23.26714 23.5669-4.900318-.877-3.22036 4.506-1.22374 7.768 6.82718 11.261 16.77808 25.822 37.22738 22.582 21.8072-3.462 24.1205-23.982 30.8725-10.013 10.1066 20.897-41.0059 40.685-53.8068 9.238-3.5049-8.613-15.59733-1.115-10.3374 5.894 1.61018 2.503 3.4512 1.615 5.6678 1.017.6602-.183 5.0614 11.036 21.9146 13.426 16.1877 2.304 40.4746 5.598 29.6917 21.209 4.7661 1.077 7.8309-3.914 9.3391-7.762 1.8302 2.793 2.587 6.142 3.3169 9.404.9822-3.451 4.3851-8.441 6.4891-11.348C87.5026 180.827 90.0628 190 90.0628 190s2.222-12.047 6.6554-17.129c-1.2237.538 2.0288 3.795 2.4958 4.376 1.374 1.809 3.467 1.777 5.158 3.133-5.4908-6.152 2.893-20.73 2.893-20.73l11.271 12.279-7.031-19.427s8.845 1.588 14.164-1.562c-9.156-2.013-13.219-14.405-13.219-14.405s5.378-.602 7.412-3.165Z\" fill=\"#E41B12\"><\/path><path d=\"m110.254 138.92 41.967-.29s-26.67-24.838-40.791-20.806\" fill=\"#E41B12\"><\/path><path d=\"M129.169 130.313s-4.197.178-10.563-2.153c-.66-.266-1.293-.596-1.889-.985-1.212-.775-2.159-1.902-2.716-3.23M120.114 128.989c-2.292.538-6.215 2.627-7.133 3.897\" stroke=\"#13130C\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><\/path><path d=\"M9.58606 97.2663c1.27204 4.0857 9.54834 3.0147 9.12434-1.9971.585-5.1139-6.9023-6.7665-9.12434-2.8369-.90707 1.5988-.65481 2.5785 0 4.834ZM33.4381 114.659c-1.9698-7.138-11.6953-3.122-9.3766 3.294 2.4206 5.254 10.7238 2.175 9.3766-3.294Z\" fill=\"#13130C\"><\/path><path d=\"M80.2047 118.532c4.0427-4.333 3.8178-11.132-.5023-15.187-4.3201-4.0543-11.0995-3.8288-15.1422.504-4.0427 4.333-3.8178 11.132.5023 15.187 4.3201 4.054 11.0995 3.829 15.1422-.504Z\" fill=\"#fff\"><\/path><path d=\"M72.9495 113.739c1.3997-.316 2.2788-1.711 1.9637-3.114-.3152-1.404-1.7053-2.286-3.105-1.97-1.3996.316-2.2788 1.711-1.9636 3.114.3152 1.404 1.7053 2.286 3.1049 1.97Z\" fill=\"#13130C\"><\/path><path d=\"M93.4392 143.071c4.5536-3.789 5.1826-10.563 1.4048-15.13s-10.5317-5.198-15.0853-1.409c-4.5536 3.789-5.1825 10.563-1.4047 15.13 3.7777 4.567 10.5316 5.198 15.0852 1.409Z\" fill=\"#fff\"><\/path><path d=\"M83.1641 131.326c1.3997-.316 2.2791-1.71 1.9642-3.114-.3149-1.404-1.7049-2.286-3.1046-1.97-1.3998.316-2.2791 1.71-1.9642 3.114.3149 1.404 1.7049 2.286 3.1046 1.97Z\" fill=\"#13130C\"><\/path><path d=\"M88.5598 121.242c-.5692-1.808-.5201-3.756.1395-5.534M99.2944 140.858c1.4136 1.106 3.1316 1.749 4.9216 1.841M93.0146 123.143c.1277-1.852.6786-3.65 1.6102-5.254M97.1475 126.964l3.8645-3.811M99.2461 131.303c.9929.148 2.0069.063 2.9619-.249.955-.312 1.824-.842 2.54-1.549M99.9546 136.315c1.8574 1.031 4.0304 1.332 6.0974.845\" stroke=\"#13130C\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><\/path><path d=\"M73.2151 149.816c1.6757-.122 3.3094-.583 4.8026-1.356 1.4932-.772 2.815-1.84 3.8855-3.139 1.0706-1.298 1.8678-2.801 2.3436-4.417.4758-1.616.6202-3.312.4247-4.986-.1955-1.673-.727-3.29-1.5624-4.752-.8354-1.462-1.9573-2.739-3.2982-3.754-1.3409-1.015-2.873-1.748-4.5038-2.153-1.6308-.405-3.3265-.475-4.9849-.205-.8964.102 4.2025 5.205 4.8305 11.105.7246 6.46-2.9252 13.775-1.9376 13.657ZM80.5092 99.3443c-3.6068-8.8766 12.5755-36.9761 12.5755-36.9761l3.5263 40.1738\" fill=\"#E41B12\"><\/path><path d=\"M93.5963 168.296c4.1359-4.433 3.9058-11.389-.5139-15.537-4.4197-4.148-11.3553-3.917-15.4912.516-4.1359 4.432-3.9058 11.388.5139 15.536 4.4197 4.148 11.3553 3.918 15.4912-.515Z\" fill=\"#0054A3\"><\/path><\/g><\/svg>"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "16530384862ce1c538",
+    "16530397139b9d49e8",
+    "165304391611568b1d",
+    "1653046966674907b3",
+    "166130168022890f7f",
+    "165304919577df6bc0",
+    "165303865900f2d0fd"
+  ]
+}

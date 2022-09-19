@@ -1,0 +1,121 @@
+{{ 'component-article-card.css' | asset_url | stylesheet_tag }}
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'section-main-blog.css' | asset_url | stylesheet_tag }}
+
+
+{%- paginate blog.articles by 9 -%}
+  <div class="main-blog overflow-hidden page-width">
+    <div class="blog-filter">
+      <ul class="blog-filter-box mb-5">
+        <li class="blog-filter_item{% if current_tags == nil %} active{% endif %}">
+          <a href="{{ blog.url }}">All events</a>
+        </li>
+        {% for tag in blog.all_tags %}
+        {% if current_tags contains tag %}
+        <li class="blog-filter_item active">{{ tag | link_to_tag: tag }}</li>
+        {% else %}
+        <li class="blog-filter_item">{{ tag | link_to_tag: tag }}</li>
+        {% endif %}
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="row blog-wrapper" id="articles-grid">
+      {%- for article in blog.articles -%}
+        <div class="s blog-articles__article article col-lg-4">
+          {%- render 'article-card',
+            article: article,
+            media_height: section.settings.image_height,
+            media_aspect_ratio: article.image.aspect_ratio,
+            show_image: section.settings.show_image,
+            show_date: section.settings.show_date,
+            show_author: section.settings.show_author,
+            show_excerpt: true,
+            show_badge: section.settings.show_badge,
+            event_date: article.metafields.custom.event_date,
+            final_event_date: article.metafields.custom.final_event_date
+          -%}
+        </div>
+      {%- endfor -%}
+    </div>
+
+    {%- if paginate.pages > 1 -%}
+      <div class="text-center mt-1.5 mt-md-2.5">
+        <load-more class="btn btn-outline-dark btn--with-icon{% unless paginate.next.is_link %} d-none{% endunless %}" 
+            data-target="#articles-grid"
+            data-section-id="{{ section.id }}"
+            data-next-url="{{ paginate.next.url }}">
+          Load More events
+          {% render 'icon' with 'arrow-down' %}
+        </load-more>
+      </div>
+      <script src="{{ 'load-more.js' | asset_url }}" defer="defer"></script>
+    {%- endif -%}
+  </div>
+{%- endpaginate -%}
+
+{% schema %}
+{
+  "name": "t:sections.main-blog.name",
+  "tag": "section",
+  "class": "section section-space",
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:sections.main-blog.settings.header.content"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_image",
+      "default": true,
+      "label": "t:sections.main-blog.settings.show_image.label"
+    },
+    {
+      "type": "select",
+      "id": "image_height",
+      "options": [
+        {
+          "value": "adapt",
+          "label": "t:sections.main-blog.settings.image_height.options__1.label"
+        },
+        {
+          "value": "small",
+          "label": "t:sections.main-blog.settings.image_height.options__2.label"
+        },
+        {
+          "value": "medium",
+          "label": "t:sections.main-blog.settings.image_height.options__3.label"
+        },
+        {
+          "value": "large",
+          "label": "t:sections.main-blog.settings.image_height.options__4.label"
+        }
+      ],
+      "default": "medium",
+      "label": "t:sections.main-blog.settings.image_height.label",
+      "info": "t:sections.main-blog.settings.image_height.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_date",
+      "default": true,
+      "label": "t:sections.main-blog.settings.show_date.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_author",
+      "default": false,
+      "label": "t:sections.main-blog.settings.show_author.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_badge",
+      "default": false,
+      "label": "Show TAG"
+    },
+    {
+      "type": "paragraph",
+      "content": "t:sections.main-blog.settings.paragraph.content"
+    }
+  ]
+}
+{% endschema %}

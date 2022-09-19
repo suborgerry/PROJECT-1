@@ -1,0 +1,70 @@
+<section class="section-space">
+    <div class="page-width">
+      <div class="map-size" id="map"></div>
+    </div>
+</section>
+
+<script>
+    function initMap() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: {{ section.settings.zoom }},
+            center: {lat: {{ section.settings.lat }}, lng: {{ section.settings.lng }} }
+        });
+
+        new google.maps.Marker({
+            position: {lat: {{ section.settings.lat }}, lng: {{ section.settings.lng }} },
+            icon: '{{ section.settings.pin | img_url: 'master' }}',
+            map: map
+        });
+
+    }
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key={{ section.settings.api_key }}&callback=initMap&signed_in=true" async defer></script>
+
+{% schema %}
+{
+  "name": "Map Section",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "Save changes first in order to preview them."
+    },
+    {
+      "type": "text",
+      "id": "api_key",
+      "label": "API Key"
+    },
+    {
+      "type": "text",
+      "id": "lat",
+      "label": "Lat",
+      "default": "-25.363882"
+    },
+    {
+      "type": "text",
+      "id": "lng",
+      "label": "Lng",
+      "default": "131.044922"
+    },
+    {
+      "type": "range",
+      "id": "zoom",
+      "min": 1,
+      "max": 15,
+      "step": 1,
+      "default": 8,
+      "label": "Zoom"
+    },
+    {
+      "type": "image_picker",
+      "id": "pin",
+      "label": "Pin"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Map Section"
+    }
+  ]
+}
+{% endschema %}

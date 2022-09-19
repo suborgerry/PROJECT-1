@@ -1,0 +1,62 @@
+{
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "settings": {
+        "subheading_color": "blue"
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "settings": {
+        "paginate": 9,
+        "logo": ""
+      }
+    },
+    "1653657360cc788c48": {
+      "type": "membership",
+      "blocks": {
+        "2080741f-4cb5-486a-85cb-7d050b7a3532": {
+          "type": "text",
+          "settings": {
+            "title": "Per Week",
+            "description": "Lorem ipsum det",
+            "price": "$35"
+          }
+        },
+        "fb5f2e32-2c5c-4882-b920-8ce5505e07fc": {
+          "type": "text",
+          "settings": {
+            "title": "Per Month",
+            "description": "Lorem ipsum det",
+            "price": "$120"
+          }
+        },
+        "d89c7e15-134d-42b4-ab95-1d035788005e": {
+          "type": "text",
+          "settings": {
+            "title": "Per Year",
+            "description": "Lorem ipsum det",
+            "price": "$1,240"
+          }
+        }
+      },
+      "block_order": [
+        "2080741f-4cb5-486a-85cb-7d050b7a3532",
+        "fb5f2e32-2c5c-4882-b920-8ce5505e07fc",
+        "d89c7e15-134d-42b4-ab95-1d035788005e"
+      ],
+      "settings": {
+        "subheading": "Beer Membership",
+        "heading": "Membership For more beer Heading",
+        "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed magna tempus interdum id volutpat diam at nullam.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed magna tempus interdum id volutpat diam at nullam.<\/p>",
+        "image": "shopify:\/\/shop_images\/membership.jpg"
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "product-grid",
+    "1653657360cc788c48"
+  ]
+}

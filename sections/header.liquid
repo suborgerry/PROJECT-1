@@ -1,0 +1,144 @@
+<header-sticky class="header d-block position-fixed w-100">
+  <div class="page-width">
+    <div class="d-flex align-items-center justify-content-between">
+      <div class="header__logo">
+        {%- if request.page_type == 'index' -%}
+        <h1>
+          {%- endif -%}
+          <a href="{{ routes.root_url }}" class="d-block link link--text focus-inset">
+            {%- if section.settings.logo != blank -%}
+              {{ section.settings.logo }}
+            {%- else -%}
+              <span class="h2">{{ shop.name }}</span>
+            {%- endif -%}
+          </a>
+          {%- if request.page_type == 'index' -%}
+        </h1>
+        {%- endif -%}
+      </div>
+
+      <div class="d-flex align-items-center">
+        {% for block in section.blocks %}
+          <a href="{{ block.settings.url }}" class="btn {{ block.settings.style }} mr-1.5 d-none d-lg-inline-flex">
+            {{- block.settings.label -}}
+          </a>
+          {% if block.settings.mobile_icon != blank %}
+          <a href="{{ block.settings.url }}" class="btn btn-inline text-black-600 d-lg-none">
+            {{- block.settings.mobile_icon -}}
+          </a>
+          {% endif %}
+        {% endfor %}
+
+
+        <a href="{{ routes.cart_url }}" class="btn btn-inline text-black-600 position-relative" id="cart-icon-bubble">
+          {%- render 'icon' with 'cart' -%}
+          <span class="visually-hidden">{{ 'templates.cart.cart' | t }}</span>
+          <div class="bg-red media--circle text-light position-absolute h-circle">
+            {%- if cart.item_count < 100 -%}
+              <span data-cart-bubble aria-hidden="true">
+                {%- if cart.item_count > 0 -%}
+                  {{- cart.item_count -}}
+                {%- endif -%}
+              </span>
+            {%- endif -%}
+            <span class="visually-hidden">{{ 'sections.header.cart_count' | t: count: cart.item_count }}</span>
+          </div>
+        </a>
+
+        <button class="btn btn-inline ml-md-1.5 text-black-600" data-menu-toggler>
+          {%- render 'icon' with 'burger' -%}
+        </button>
+      </div>
+    </div>
+  </div>
+</header-sticky>
+
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Organization",
+    "name": {{ shop.name | json }},
+    {% if section.settings.logo %}
+      "logo": {{ section.settings.logo }},
+    {% endif %}
+    "sameAs": [
+      {{ settings.social_twitter_link | json }},
+      {{ settings.social_facebook_link | json }},
+      {{ settings.social_pinterest_link | json }},
+      {{ settings.social_instagram_link | json }},
+      {{ settings.social_tiktok_link | json }},
+      {{ settings.social_tumblr_link | json }},
+      {{ settings.social_snapchat_link | json }},
+      {{ settings.social_youtube_link | json }},
+      {{ settings.social_vimeo_link | json }}
+    ],
+    "url": {{ request.origin | append: page.url | json }}
+  }
+</script>
+
+{%- if request.page_type == 'index' -%}
+  {% assign potential_action_target = request.origin | append: routes.search_url | append: "?q={search_term_string}" %}
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "WebSite",
+      "name": {{ shop.name | json }},
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {{ potential_action_target | json }},
+        "query-input": "required name=search_term_string"
+      },
+      "url": {{ request.origin | append: page.url | json }}
+    }
+  </script>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "t:sections.header.name",
+  "settings": [
+    {
+      "type": "text",
+      "id": "logo",
+      "label": "Logo (SVG)"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Button",
+      "type": "button",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "URL"
+        },
+        {
+          "type": "select",
+          "id": "style",
+          "options": [
+            { "value": "btn-dark", "label": "Dark" },
+            { "value": "btn-outline-dark", "label": "Outline dark" },
+            { "value": "btn-cream", "label": "Cream" },
+            { "value": "btn-outline-cream", "label": "Outline cream" }
+          ],
+          "label": "Style",
+          "default": "btn-dark"
+        },
+        {
+          "type": "text",
+          "id": "mobile_icon",
+          "label": "Mobile icon",
+          "info": "Button will be hidden for mobile unless icon is used"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

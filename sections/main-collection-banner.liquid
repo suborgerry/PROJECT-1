@@ -1,0 +1,51 @@
+<div class="page-width">
+    <div class="row row--md">
+      <div class="col-lg-6">
+        <h5 class="mb-0.5 mb-md-1 text-{{ section.settings.subheading_color }}">{{ collection.metafields.my_fields.subheading }}</h5>
+
+        <h1 class="mb-1 mb-md-2.5">
+          <span class="visually-hidden">{{ 'sections.collection_template.title' | t }}: </span>
+          {{- collection.title | escape -}}
+        </h1>
+        <span></span>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="rte mb-1.5 mb-mb-2.5">{{- collection.description -}}</div>
+
+        <div>
+          <a href="#ProductGridContainer" class="btn btn-outline-dark btn--with-icon">
+            Discover More
+            {% render 'icon' with 'arrow-down' %}
+          </a>
+        </div>
+      </div>
+    </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.main-collection-banner.name",
+  "class": "collection-hero bg-light",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "select",
+      "id": "subheading_color",
+      "options": [
+        {"value": "blue", "label": "Blue"},
+        {"value": "red", "label": "Red"},
+        {"value": "pink", "label": "Pink"},
+        {"value": "orange", "label": "Orange"},
+        {"value": "cream", "label": "Cream"},
+        {"value": "light-green", "label": "Light green"},
+        {"value": "green", "label": "Green"},
+        {"value": "yellow", "label": "Yellow"},
+        {"value": "black-600", "label": "Black"}
+      ],
+      "default": "blue",
+      "label": "Subheading color"
+    }
+  ]
+}
+{% endschema %}

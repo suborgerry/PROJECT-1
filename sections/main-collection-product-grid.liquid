@@ -1,0 +1,133 @@
+{{ 'component-loading-overlay.css' | asset_url | stylesheet_tag }}
+{{ 'component-facets.css' | asset_url | stylesheet_tag }}
+
+<script src="{{ 'facets.js' | asset_url }}" defer="defer"></script>
+
+<div class="page-width">
+  <div class="row row--md">
+    <div class="col-lg-4 col-xl-3">
+      <aside aria-labelledby="verticalTitle" id="main-collection-filters" data-id="{{ section.id }}">
+        <h4 class="d-none d-lg-block">Filter By</h4>
+        <hr class="d-none d-lg-block my-2.5 bg-black-600 transparent-0.5">
+
+        <h6 class="d-none d-lg-block mb-1.5 font-header">KEYWORK SEARCH</h6>
+
+        <div class="d-flex mb-1.5 mb-md-2.5">
+
+          <form action="{{ routes.search_url }}" method="get" role="search" class="w-100">
+            <div class="form__field position-relative">
+              <input name="options[prefix]" type="hidden" value="last">
+              <input
+                class="form__field__input"
+                id="Search-In-Template"
+                name="q"
+                value="{{ search.terms | escape }}"
+                placeholder="Type something"
+              >
+
+              <button type="submit" class="btn btn-inline form__field__icon position-absolute transparent-0.6" aria-label="{{ 'general.search.search' | t }}">
+                {% render 'icon' with 'magnify' %}
+              </button>
+            </div>
+          </form>
+
+          {% comment %}  Drawer and mobile filter {% endcomment %}
+          <button class="bg-light px-0.75 ml-1 d-lg-none border-none" onclick="document.querySelector('.facets-drawer').classList.toggle('open')">
+            {% render 'icon' with 'filter', class: 'd-block' %}
+          </button>
+
+        </div>
+
+        {% render 'facets', results: collection, logo: section.settings.logo %}
+      </aside>
+    </div>
+    <div class="col-lg-8 col-xl-9">
+      <facet-filters-form class="d-none d-lg-block mb-1.5 mb-md-2.5 no-js-hidden">
+        <form id="FacetSortForm" class="d-flex justify-content-end">
+          <div class="d-flex align-items-center position-relative bg-light">
+              <div class="form__field__label events-none">
+                {%- render 'icon' with 'sort' -%}
+              </div>
+
+              {%- assign sort_by = collection.sort_by | default: collection.default_sort_by -%}
+              <select name="sort_by" class="form__field__input px-3" id="SortBy" aria-describedby="a11y-refresh-page-message">
+                <option disabled selected="selected">Sort by</option>
+                {%- for option in collection.sort_options -%}
+                  <option value="{{ option.value | escape }}">{{ option.name | escape }}</option>
+                {%- endfor -%}
+              </select>
+
+              {% render 'icon' with 'chevron-down', class: 'form__field__icon form__field__icon--small position-absolute events-none' %}
+            </div>
+
+          <span class="d-none" id="ProductCountDesktop">
+            {%- if collection.results_count -%}
+              {{ 'templates.search.results_with_count' | t: terms: collection.terms, count: collection.results_count }}
+              {%- elsif collection.products_count == collection.all_products_count -%}
+              {{ 'products.facets.product_count_simple' | t: count: collection.products_count }}
+            {%- else -%}
+              {{ 'products.facets.product_count' | t: product_count: collection.products_count, count: collection.all_products_count }}
+            {%- endif -%}
+          </span>
+        </form>
+      </facet-filters-form>
+
+      <div id="ProductGridContainer">
+          {%- paginate collection.products by section.settings.paginate -%}
+            <div class="collection position-relative">
+              <div class="loading-overlay gradient"></div>
+              <div id="product-grid" data-id="{{ section.id }}" class="row row--md">
+                {%- for product in collection.products -%}
+                  <div class="col-md-6 col-xl-4 mb-2.5 mb-md-4">
+                    {% render 'card-product', card_product: product %}
+                  </div>
+                {%- endfor -%}
+              </div>
+
+              {%- if paginate.pages > 1 -%}
+                <div class="text-center">
+                  <load-more class="btn btn-outline-dark btn--with-icon{% unless paginate.next.is_link %} d-none{% endunless %}"
+                      data-target="#product-grid"
+                      data-section-id="{{ section.id }}"
+                      data-next-url="{{ paginate.next.url }}">
+                    Load More
+                    {% render 'icon' with 'plus' %}
+                  </load-more>
+                </div>
+                <script src="{{ 'load-more.js' | asset_url }}" defer="defer"></script>
+              {%- endif -%}
+
+            </div>
+          {%- endpaginate -%}
+        </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.main-collection-product-grid.name",
+  "class": "section",
+  "class": "section-space collection-main",
+  "settings": [
+    {
+      "type": "range",
+      "id": "paginate",
+      "min": 3,
+      "max": 48,
+      "step": 3,
+      "default": 3,
+      "label": "Number of products to show"
+    },
+    {
+      "type": "header",
+      "content": "Filters"
+    },
+    {
+      "type": "text",
+      "id": "logo",
+      "label": "Logo"
+    }
+  ]
+}
+{% endschema %}

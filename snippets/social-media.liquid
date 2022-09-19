@@ -1,0 +1,8 @@
+<div class="flex-center">
+  {% if settings.social_facebook_link %}
+    <a href="{{ settings.social_facebook_link }}" class="{{ class }} px-0.25 px-md-0.5 text-black-600">{%- render 'icon' with 'facebook' -%}</a>
+  {% endif %}
+  {% if settings.social_instagram_link %}
+    <a href="{{ settings.social_instagram_link }}" class="{{ class }} px-0.25 px-md-0.5 text-black-600">{%- render 'icon' with 'instagram' -%}</a>
+  {% endif %}
+</div>

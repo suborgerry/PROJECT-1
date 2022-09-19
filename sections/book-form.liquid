@@ -1,0 +1,188 @@
+{{ 'section-contact-form.css' | asset_url | stylesheet_tag }}
+
+<div class="color-{{ section.settings.color_scheme }} gradient">
+  <div class="contact page-width page-width--narrow ">
+    {%- if section.settings.heading != blank -%}
+      <h2 class="title title-wrapper--no-top-margin {{ section.settings.heading_size }}">{{ section.settings.heading | escape }}</h2>
+    {%- else -%}
+      <h2 class="visually-hidden">{{ 'templates.contact.form.title' | t }}</h2>
+    {%- endif -%}
+    <div class="row">
+      <div class="col-lg-4">
+        <p class="mb-0 text-md-1.5 text-1.125 text-black-600">{{section.settings.descr_form}}</p>
+
+        {% if section.settings.btn_text != blank %}
+          <a href="{{section.settings.btn_link}}" class="btn btn-outline-dark mt-2.5 d-lg-inline-flex">{{section.settings.btn_text}}</a>
+        {% endif %}
+      </div>
+      <div class="col-lg-8">
+        {%- form 'contact', id: 'ContactForm', class: 'isolate fz-1.125' -%}
+          {%- if form.posted_successfully? -%}
+            <div class="form-status form-status-list form__message" tabindex="-1" autofocus>{% render 'icon-success' %} {{ 'templates.contact.form.post_success' | t }}</div>
+          {%- elsif form.errors -%}
+            <div class="form__message">
+              <h2 class="form-status caption-large text-body" role="alert" tabindex="-1" autofocus>{% render 'icon-error' %} {{ 'templates.contact.form.error_heading' | t }}</h2>
+            </div>
+            <ul class="form-status-list caption-large" role="list">
+              <li>
+                <a href="#ContactForm-email" class="link">
+                  {{ form.errors.translated_fields['email'] | capitalize }} {{ form.errors.messages['email'] }}
+                </a>
+              </li>
+            </ul>
+          {%- endif -%}
+          <div class="contact__fields mb-2.5">
+            <div class="input-box">
+              <label class="text-blue input-box_label" for="ContactForm-name">First Name*</label>
+              <input class="form__field__input" autocomplete="name" type="text" id="ContactForm-name" name="contact[First name]" value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}" placeholder="e.g. John" required>
+            </div>
+            <div class="input-box">
+              <label class="text-blue input-box_label" for="ContactForm-name">Last Name</label>
+              <input class="form__field__input" autocomplete="l-name" name="contact[Last name]" type="text" placeholder="e.g. Smith">
+            </div>
+          </div>
+          <div class="contact__fields mb-2.5">
+            <div class="input-box">
+              <label class="text-blue input-box_label" for="ContactForm-email">{{ 'templates.contact.form.email' | t }} Address<span aria-hidden="true">*</span></label>
+              <input
+                autocomplete="email"
+                type="email"
+                id="ContactForm-email"
+                class="form__field__input"
+                name="contact[email]"
+                spellcheck="false"
+                autocapitalize="off"
+                value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
+                aria-required="true"
+                {% if form.errors contains 'email' %}
+                  aria-invalid="true"
+                  aria-describedby="ContactForm-email-error"
+                {% endif %}
+                placeholder="e.g. john@company.com.au"
+                required
+              >
+            </div>
+            <div class="input-box">
+              <label class="text-blue input-box_label" for="ContactForm-phone">{{ 'templates.contact.form.phone' | t }}<span aria-hidden="true">*</span></label>
+              <input type="tel" id="ContactForm-phone" class="form__field__input" autocomplete="tel" name="contact[{{ 'templates.contact.form.phone' | t }}]" pattern="[0-9\-]*" value="{% if form.phone %}{{ form.phone }}{% elsif customer %}{{ customer.phone }}{% endif %}" placeholder="e.g. 0400 000 000" required>
+            </div>
+          </div>
+
+          <div class="mb-2.5">
+              <label class="text-blue input-box_label" for="ContactForm-time">Date and time<span aria-hidden="true">*</span></label>
+              <input type="datetime-local" id="ContactForm-time" class="form__field__input"
+                     name="contact[date & time]"
+                     placeholder="2022-07-29T15:06"
+                     required
+              >
+          </div>
+
+          <div class="contact__fields mb-2.5">
+            <div class="input-box">
+              <label class="text-blue input-box_label" for="ContactForm-number">Number of Guests<span aria-hidden="true">*</span></label>
+              <input
+                type="number"
+                id="ContactForm-number"
+                class="form__field__input"
+                name="contact[Number of Guests]"
+                spellcheck="false"
+                autocapitalize="off"
+                aria-required="true"
+                placeholder="4"
+                required
+              >
+            </div>
+            <div class="input-box">
+              <label class="text-blue input-box_label" for="ContactForm-18+">18+</label>
+              <select class="form__field__input"
+                      name="contact[18+]"
+                      id="ContactForm-18+">
+                <option value="No" selected="selected">No</option>
+                <option value="yes">Yes</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="mt-2.5">
+            <label class="text-blue input-box_label" for="ContactForm-body">Comments</label>
+            <textarea
+              rows="10"
+              id="ContactForm-body"
+              class="text-area form__field__input"
+              name="contact[{{ 'templates.contact.form.comment' | t }}]"
+            >
+              {{- form.body -}}
+            </textarea>
+          </div>
+          <div class="mt-2.5">
+            <button type="submit" class="btn btn-dark d-lg-inline-flex">
+              {{ 'templates.contact.form.send' | t }}
+            </button>
+          </div>
+        {%- endform -%}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Book form",
+  "tag": "section",
+  "class": "section section-space",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "default": "Contact form",
+      "label": "Heading"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        {
+          "value": "h2",
+          "label": "t:sections.all.heading_size.options__1.label"
+        },
+        {
+          "value": "h1",
+          "label": "t:sections.all.heading_size.options__2.label"
+        },
+        {
+          "value": "h0",
+          "label": "t:sections.all.heading_size.options__3.label"
+        }
+      ],
+      "default": "h1",
+      "label": "t:sections.all.heading_size.label"
+    },
+    {
+      "type": "header",
+      "content": "Form settings"
+    },
+    {
+      "type": "text",
+      "id": "descr_form",
+      "label": "Form description",
+      "default": "For general enquiries, or wholesale orders please fill out the form."
+    },
+    {
+      "type": "text",
+      "id": "btn_text",
+      "label": "Button name",
+      "default": "Book a table"
+    },
+    {
+      "type": "url",
+      "id": "btn_link",
+      "label": "Button link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Book form"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,102 @@
+<div class="page-width">
+    <div class="row row--md">
+      <div class="col-lg-6">
+        <h5 class="mb-0.5 mb-md-1 text-md-1.125 text-{{ section.settings.subheading_color }}">
+          {% if page.title !=blank %}
+            {{ page.title }}
+          {% endif %}
+          {{section.settings.subtitle}}
+        </h5>
+
+        <h1 class="mb-1 mb-md-2.5">
+          {{- section.settings.title | escape -}}
+        </h1>
+        <span></span>
+      </div>
+
+      <div class="col-lg-6">
+        {% if page.content !=blank %}
+          <div class="rte mb-1.5 mb-mb-2.5 text-black-600">{{- page.content -}}</div>
+        {% endif %}
+          <div class="rte mb-1.5 mb-mb-2.5 text-black-600">{{section.settings.content}}</div>
+        <div>
+          {% if section.settings.btn_text !=blank %}
+            <a href="{{section.settings.btn_link}}" class="btn btn-outline-dark btn--with-icon">
+              {{section.settings.btn_text}}
+              {% render 'icon' with 'arrow-down' %}
+            </a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+
+    {% if section.settings.liquid !=blank %}
+      <div class="banner_img">
+        {{section.settings.liquid}}
+      </div>
+    {% endif %}
+</div>
+
+{% schema %}
+{
+  "name": "Banner",
+  "class": "banner bg-light",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "select",
+      "id": "subheading_color",
+      "options": [
+        {"value": "blue", "label": "Blue"},
+        {"value": "red", "label": "Red"},
+        {"value": "pink", "label": "Pink"},
+        {"value": "orange", "label": "Orange"},
+        {"value": "cream", "label": "Cream"},
+        {"value": "light-green", "label": "Light green"},
+        {"value": "green", "label": "Green"},
+        {"value": "yellow", "label": "Yellow"},
+        {"value": "black-600", "label": "Black"}
+      ],
+      "default": "blue",
+      "label": "Subheading color"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle"
+    },
+    {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+    },
+    {
+      "type": "text",
+      "id": "content",
+      "label": "Content"
+    },
+    {
+      "type": "text", 
+      "id": "btn_text",
+      "label": "Button Text",
+      "default": "Discover More"
+    },
+    {
+      "type": "url", 
+      "id": "btn_link",
+      "label": "Button link",
+      "info": "id down section"
+    },
+    {
+      "type": "liquid",
+      "id": "liquid",
+      "label": "Custom liquid"
+    }
+  ],
+  "presets": [
+        {
+            "name": "Banner"
+        }
+    ]
+}
+{% endschema %}
