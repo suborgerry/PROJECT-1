@@ -21,20 +21,40 @@
     </div>
     <div class="row blog-wrapper" id="articles-grid">
       {%- for article in blog.articles -%}
-        <div class="s blog-articles__article article col-lg-4">
-          {%- render 'article-card',
-            article: article,
-            media_height: section.settings.image_height,
-            media_aspect_ratio: article.image.aspect_ratio,
-            show_image: section.settings.show_image,
-            show_date: section.settings.show_date,
-            show_author: section.settings.show_author,
-            show_excerpt: true,
-            show_badge: section.settings.show_badge,
-            event_date: article.metafields.custom.event_date,
-            final_event_date: article.metafields.custom.final_event_date
-          -%}
-        </div>
+        {% if article.metafields.custom.get_to_te_top %}
+          <div class="s blog-articles__article article col-lg-4">
+            {%- render 'article-card',
+              article: article,
+              media_height: section.settings.image_height,
+              media_aspect_ratio: article.image.aspect_ratio,
+              show_image: section.settings.show_image,
+              show_date: section.settings.show_date,
+              show_author: section.settings.show_author,
+              show_excerpt: true,
+              show_badge: section.settings.show_badge,
+              event_date: article.metafields.custom.event_date,
+              final_event_date: article.metafields.custom.final_event_date
+            -%}
+          </div>
+        {% endif %}
+      {%- endfor -%}
+      {%- for article in blog.articles -%}
+        {% unless article.metafields.custom.get_to_te_top %}
+          <div class="s blog-articles__article article col-lg-4">
+            {%- render 'article-card',
+              article: article,
+              media_height: section.settings.image_height,
+              media_aspect_ratio: article.image.aspect_ratio,
+              show_image: section.settings.show_image,
+              show_date: section.settings.show_date,
+              show_author: section.settings.show_author,
+              show_excerpt: true,
+              show_badge: section.settings.show_badge,
+              event_date: article.metafields.custom.event_date,
+              final_event_date: article.metafields.custom.final_event_date
+            -%}
+          </div>
+        {% endunless %}
       {%- endfor -%}
     </div>
 

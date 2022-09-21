@@ -15,30 +15,31 @@
   
   {% for block in section.blocks %}
     <div class="image-banner__slide flex-center absolute-fill events-none z-stack" data-block-id="{{ block.id }}"  style="--color: {{ block.settings.color.red }}, {{ block.settings.color.green }}, {{ block.settings.color.blue }}">
-      <div>
-        <div class="image-banner__slide__bg bg-light absolute-center h-100 w-100 z-behind"> </div>
-        {% if block.settings.featured_image != blank %}
-          <div class="image-banner__slide__image absolute-center z-stack-2">
-            <div data-parallax>
-              {% render 'image' with block.settings.featured_image, class: 'fit-contain' %}
-            </div>
+      <div class="image-banner__slide__bg bg-light absolute-center h-100 w-100 z-behind"> </div>
+      {% if block.settings.featured_image != blank %}
+        <div class="image-banner__slide__image absolute-center z-stack-2">
+          <div data-parallax>
+            {% render 'image' with block.settings.featured_image, class: 'fit-contain' %}
           </div>
-        {% endif %}
+        </div>
+      {% endif %}
 
-        <div class="image-banner__slide__circle-1 position-absolute z-behind" data-parallax data-parallax-amplifier="0.5">
-          <div class="media media--circle" style="background-color: {{ block.settings.circle_big_color }};"> </div>
-        </div>
-        <div class="image-banner__slide__circle-2 position-absolute z-stack-2" data-parallax data-parallax-amplifier="2">
-          <div class="media media--circle" style="background-color: {{ block.settings.circle_small_color }};"> </div>
-        </div>
-        <div class="image-banner__slide__rect position-absolute z-stack-2" style="background-color: {{ block.settings.rect_color }};"> </div>
-        <div class="image-banner__slide__triangle position-absolute z-behind" style="color: {{ block.settings.triangle_color }};">
-          <svg width="71" height="81" viewBox="0 0 71 81" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M.978025 40.1911 70.0829.293401V80.0888L.978025 40.1911Z" fill="currentColor"/></svg>
-        </div>
-
-        <h2 class="image-banner__slide__heading text-center">{{ block.settings.heading }}</h2>
+      <div class="image-banner__slide__circle-1 position-absolute z-behind" data-parallax data-parallax-amplifier="0.5">
+        <div class="media media--circle" style="background-color: {{ block.settings.circle_big_color }};"> </div>
       </div>
+      <div class="image-banner__slide__circle-2 position-absolute z-stack-2" data-parallax data-parallax-amplifier="2">
+        <div class="media media--circle" style="background-color: {{ block.settings.circle_small_color }};"> </div>
+      </div>
+      <div class="image-banner__slide__rect position-absolute z-stack-2" style="background-color: {{ block.settings.rect_color }};"> </div>
+      <div class="image-banner__slide__triangle position-absolute z-behind" style="color: {{ block.settings.triangle_color }};">
+        <svg width="71" height="81" viewBox="0 0 71 81" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M.978025 40.1911 70.0829.293401V80.0888L.978025 40.1911Z" fill="currentColor"/></svg>
+      </div>
+
+      <h2 class="image-banner__slide__heading text-center">{{ block.settings.heading }}</h2>
     </div>
+    <a href="{{ block.settings.product_link }}">
+    </a>
+
   {% endfor %}
 
   <div class="page-width">
@@ -191,6 +192,11 @@
           "type": "color",
           "id": "triangle_color",
           "label": "Triangle color"
+        },
+        {
+          "type": "url",
+          "id": "product_link",
+          "label": "Product link"
         }
       ]
     }

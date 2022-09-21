@@ -2161,9 +2161,30 @@ html {
   transition: opacity 0.4s;
 }
 
+.image-banner__slide + a {
+  position: absolute;
+  display: none;
+  width: 50%;
+  height: 50vh;
+  margin: auto;
+  left: 25%;
+  top: 25%;
+}
+
+
 .image-banner__slide.animated {
   opacity: 1;
   pointer-events: all;
+}
+
+.image-banner__slide.animated + a {
+  display: block;
+  z-index: 2;
+}
+
+.acknowledgment-of-country {
+  margin-top: 30px;
+  color: #fff;
 }
 
 .image-banner__slide.animated .image-banner__slide__heading {
@@ -2710,7 +2731,7 @@ html {
 .card__badge {
   position: absolute;
   top: 1rem;
-  left: 1rem;
+  left: 3rem;
   padding: 0.5rem 1rem;
   background-color: #fff;
   border-radius: 100px;
