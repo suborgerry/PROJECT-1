@@ -1548,6 +1548,15 @@ https://flickity.metafizzy.co
   height: 100%;
 }
 
+div.slide-show__slider div.flickity-viewport div.flickity-slider div div.media picture,
+div.slide-show__slider div.flickity-viewport div.flickity-slider div div.media picture img {
+  width: 100%
+}
+
+.flex-direction-column {
+  flex-direction: column;
+}
+
 /* draggable */
 .flickity-enabled.is-draggable {
   -webkit-tap-highlight-color: transparent;
@@ -1710,8 +1719,8 @@ https://flickity.metafizzy.co
   top: 0;
   left: 0;
   height: 100%;
-  /* width: 100%; */
-  width: 85%;
+  width: 100%;
+  /* width: 85%; */
   margin: auto;
 }
 
@@ -1785,6 +1794,10 @@ deferred-media {
 
 .price--on-sale .price__regular {
   display: none;
+}
+
+div.card-product div.media picture {
+  width: 100%;
 }
 
 .card-product__badge {

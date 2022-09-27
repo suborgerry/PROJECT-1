@@ -929,3 +929,16 @@ customElements.define('variant-radios', VariantRadios);
 document.addEventListener('DOMContentLoaded', () => {
   document.body.style.opacity = '1';
 });
+
+(()=> {
+  const MainContent = document.querySelector('#MainContent');
+  MainContent.addEventListener('change', evt => {
+    const element = evt.target;
+    if(element.matches('select')) {
+      const input = element.parentElement.querySelector('[name=id]');
+
+      input.value = element.value;
+      input.dataset.productid = element.value;
+    }
+  })
+})();
