@@ -1796,6 +1796,11 @@ deferred-media {
   display: none;
 }
 
+.card-product__select {
+  font-size: 1.125rem;
+  margin: .8rem 0;
+}
+
 div.card-product div.media picture {
   width: 100%;
 }
@@ -3038,8 +3043,37 @@ html {
   color: rgb(var(--color-black-600));
 }
 
+.article-template {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.article-template header {
+  padding-left: 0;
+}
+
 .article-template .article-template__hero-container {
   max-width: 800px;
+}
+
+@media (min-width: 500px) {
+  .article-template .article-template__hero-container {
+    max-width: 40%;
+    width: 40%;
+    margin: 0;
+  }
+
+  .article-template .article-template__content {
+    max-width: 40%;
+    margin: 0;
+  }
+
+  .article-template__back:last-child {
+    margin-top: 3rem;
+  }
 }
 
 .article-template .article-template__link {
