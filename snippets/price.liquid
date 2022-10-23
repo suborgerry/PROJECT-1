@@ -40,7 +40,7 @@
     <div class="price__regular text-md-1.125">
       <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.regular_price' | t }}</span>
       <span>
-        {{ money_price }}
+        {{ money_price | remove: 'From' }}
       </span>
     </div>
 </div>

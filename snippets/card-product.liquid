@@ -25,14 +25,14 @@
     </div>
 
     <div class="d-flex align-items-center justify-content-center flex-direction-column">
-      {%- render 'price', product: card_product, use_variant: true, class: 'mr-0.5 mr-md-1 text-md-1.125' -%}
+      {%- render 'price', product: card_product, use_variant: false, class: 'mr-0.5 mr-md-1 text-md-1.125' -%}
 
       {%- form 'product', card_product, class: 'd-flex flex-direction-column shopify-product-form' -%}
-        <input type="hidden" name="id" data-productid="{{ product.id }}" value="{{ card_product.selected_or_first_available_variant.id }}">
+        <input type="hidden" name="id" data-productid="{{ product.id }}" value="{{ card_product.variants[0].id }}">
         {% if card_product.variants[0].title contains "Pack" %}
           <select class="card-product__select">
             {%- for variant in card_product.variants -%}
-              <option value="{{ variant.id }}" {% if forloop.last %}selected{% endif %}>{{ variant.title }}</option>
+              <option value="{{ variant.id }}" data-price="{{ variant.price | money_with_currency }}">{{ variant.title }}</option>
             {%- endfor -%}
           </select>
         {% endif %}

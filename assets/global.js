@@ -936,6 +936,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const element = evt.target;
     if(element.matches('select')) {
       const input = element.parentElement.querySelector('[name=id]');
+      const price = input.parentElement.parentElement.querySelector('.price').querySelectorAll('span')[1];
+      console.log(price);
+      price.innerText = element.selectedOptions[0].dataset.price;
 
       input.value = element.value;
       input.dataset.productid = element.value;

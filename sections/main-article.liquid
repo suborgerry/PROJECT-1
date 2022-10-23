@@ -20,6 +20,11 @@
               </span>
             {%- endif -%}
           </header>
+          
+          {%- when 'content'-%}
+            <div class="article-template__content page-width page-width--narrow rte text-black-600" itemprop="articleBody" {{ block.shopify_attributes }}>
+                {{ article.content }}
+            </div>
 
           {%- when 'featured_image'-%}
             {%- if article.image -%}
@@ -45,11 +50,6 @@
                 </div>
               </div>
             {%- endif -%}
-
-        {%- when 'content'-%}
-          <div class="article-template__content page-width page-width--narrow rte text-black-600" itemprop="articleBody" {{ block.shopify_attributes }}>
-              {{ article.content }}
-          </div>
 
         {%- when 'share' -%}
           <div class="article-template__social-sharing page-width page-width--narrow" {{ block.shopify_attributes }}>

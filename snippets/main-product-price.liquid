@@ -42,7 +42,7 @@
       {%- for option in product.options_with_values -%}
         {%- for value in option.values -%}
           {% if value contains "Pack" %}
-            For
+            <span>From</span>
             {% break %}
           {% endif %}
         {%- endfor -%}
