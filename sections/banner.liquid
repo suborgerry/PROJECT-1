@@ -20,7 +20,12 @@
         {% endif %}
           <div class="rte mb-1.5 mb-mb-2.5 text-black-600">{{section.settings.content}}</div>
         <div>
-          {% if section.settings.btn_text !=blank %}
+          {%- if section.settings.btn_scroll != blank -%}
+            <p class="btn btn-outline-dark btn--with-icon btn-scroll">
+              {{section.settings.btn_text}}
+              {% render 'icon' with 'arrow-down' %}
+            </p>
+          {% elsif section.settings.btn_text != blank %}
             <a href="{{section.settings.btn_link}}" class="btn btn-outline-dark btn--with-icon">
               {{section.settings.btn_text}}
               {% render 'icon' with 'arrow-down' %}
@@ -36,6 +41,15 @@
       </div>
     {% endif %}
 </div>
+{%- if section.settings.btn_scroll != blank -%}
+  <script>
+    const btnScroll = document.querySelector('.btn-scroll');
+    btnScroll.addEventListener('click', () => {
+      const sectionScroll = document.querySelector('#{{ section.settings.btn_scroll }}');
+      sectionScroll.scrollIntoView({behavior: "smooth", block: "start"});
+    })
+  </script>
+{%- endif -%}
 
 {% schema %}
 {
@@ -86,6 +100,11 @@
       "id": "btn_link",
       "label": "Button link",
       "info": "id down section"
+    },
+    {
+      "type": "text",
+      "id": "btn_scroll",
+      "label": "Section scroll ID"
     },
     {
       "type": "liquid",
