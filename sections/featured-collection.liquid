@@ -12,6 +12,7 @@
   {%- assign is_slider = true -%}
 {% endif %}
 
+
 <div class="page-width">
   <div class="mb-1.5 mb-md-3.75 d-flex align-items-center justify-content-between">
     <h2 class="mb-0 d-flex align-items-center">
@@ -34,7 +35,10 @@
   <div class="featured-collection__slider row flex-nowrap" data-flickity='{{ slider_options }}'>
     {% for product in section.settings.collection.products %}
       <div class="col-7 col-md-5 col-lg-3">
-        {% render 'card-product', card_product: product %}
+        {% render 'card-product', 
+          card_product: product,
+          show_dropdown: section.settings.show_dropdown
+        %}
       </div>
     {% endfor %}
   </div>
@@ -76,6 +80,12 @@
       "id": "button_label",
       "default": "All Beers",
       "label": "Button label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_dropdown",
+      "default": true,
+      "label": "Show dropdown"
     }
   ],
 	"presets": [
