@@ -1955,6 +1955,15 @@ div.card-product div.media picture {
   transition: 0.25s;
 }
 
+.text-and-images__app {
+  width: 100%;
+}
+
+.text-and-images__app #insta-feed img {
+  max-width: 270px;
+  max-height: 270px;
+}
+
 @media screen and (min-width: 768px) {
   .header {
     padding: 40px 0;
