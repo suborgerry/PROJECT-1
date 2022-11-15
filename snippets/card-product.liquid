@@ -16,7 +16,7 @@
     {% endunless %}
     <a href="{{ card_product.url }}" class="full-width-link"> </a>
   </div>
-  <div class="text-{{ settings.product_card_alignment }}">
+  <div class="text-{{ settings.product_card_alignment }} card-product__text">
     <div class="position-relative">
       <h5 class="mb-0.25 mb-md-0.5 text-0.875 text-md-1.125">{{ card_product.metafields.descriptors.category }}</h5>
       <h3 class="card-product__title{% if settings.product_card_title_break %} card-product__title--break-word{% endif %}">{{ card_product.title }}</h3>
