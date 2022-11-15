@@ -1,3 +1,23 @@
+#FacetsWrapperDesktop a.current:hover {
+  cursor: default;
+} 
+
+#FacetsWrapperDesktop a {
+  color: #000;
+}
+
+#FacetsWrapperDesktop a svg {
+  visibility: hidden;
+}
+
+#FacetsWrapperDesktop a.current span.facets__input__rect {
+  background: #000;
+}
+
+#FacetsWrapperDesktop a.current svg {
+  visibility: visible;
+}
+
 .facet-filters {
   align-items: flex-start;
   display: flex;
