@@ -78,7 +78,7 @@
               <div class="loading-overlay gradient"></div>
               <div id="product-grid" data-id="{{ section.id }}" class="row row--md">
                 {%- for product in collection.products -%}
-                  <div class="col-md-6 col-xl-4 mb-2.5 mb-md-4">
+                  <div class="col-md-6 col-xl-4 mb-2.5 mb-md-4 h-inherit">
                     {% render 'card-product',
                       card_product: product,
                       show_dropdown: section.settings.show_dropdown  

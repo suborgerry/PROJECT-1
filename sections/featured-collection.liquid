@@ -34,7 +34,7 @@
 
   <div class="featured-collection__slider row flex-nowrap" data-flickity='{{ slider_options }}'>
     {% for product in section.settings.collection.products %}
-      <div class="col-7 col-md-5 col-lg-3">
+      <div class="col-7 col-md-5 col-lg-3 h-inherit">
         {% render 'card-product', 
           card_product: product,
           show_dropdown: section.settings.show_dropdown
