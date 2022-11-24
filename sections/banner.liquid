@@ -26,7 +26,7 @@
               {% render 'icon' with 'arrow-down' %}
             </p>
           {% elsif section.settings.btn_text != blank %}
-            <a href="{{section.settings.btn_link}}" class="btn btn-outline-dark btn--with-icon">
+            <a href="{%- if section.settings.btn_link != blank -%} {{ section.settings.btn_link }} {%- else -%} # {%- endif -%}" class="btn btn-outline-dark btn--with-icon" id="btn-banner">
               {{section.settings.btn_text}}
               {% render 'icon' with 'arrow-down' %}
             </a>

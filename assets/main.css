@@ -1812,7 +1812,7 @@ deferred-media {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: -webkit-fill-available;
+  height: 200px;
 }
 
 .card-product__select {
@@ -1838,7 +1838,7 @@ div.card-product div.media picture {
 }
 
 .card-product__title {
-  height: 64px;
+  /* height: 64px; */
   overflow: hidden;
 }
 
@@ -2407,6 +2407,10 @@ html {
 .featured-collection__slider .flickity-viewport {
   width: 100%;
   overflow: visible;
+}
+
+.featured-collection__slider .flickity-slider > div {
+    /* height: -webkit-fill-available; */
 }
 
 @media screen and (min-width: 992px) {

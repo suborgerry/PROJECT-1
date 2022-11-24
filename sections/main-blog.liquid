@@ -73,6 +73,17 @@
   </div>
 {%- endpaginate -%}
 
+<script>
+  (() => {
+    const discoverButton = document.querySelector('#btn-banner');
+    discoverButton.addEventListener('click', () => {
+      console.log('Scroll');
+      const blog = document.querySelector("#shopify-section-{{ section.id }}");
+      blog.scrollIntoView({behavior: "smooth", block: "start"});
+    })
+  })();
+</script>
+
 {% schema %}
 {
   "name": "t:sections.main-blog.name",
