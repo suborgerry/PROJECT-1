@@ -9,6 +9,7 @@
         "content": "Our brewpub is open to the public five days a week, Wednesday to Sunday. With 16 taps, we are pouring a range of core and limited releases but also got Cider, delicious local wines and spirits on offer.",
         "btn_text": "Check out our menu",
         "btn_link": "#iFrameResizer0",
+        "btn_scroll": "scrollHere",
         "liquid": ""
       }
     },
@@ -395,6 +396,7 @@
     },
     "1653310093978c665a": {
       "type": "text-and-list-of-images",
+      "disabled": true,
       "blocks": {
         "0ca4f4b8-6b61-4829-94cf-d67095407967": {
           "type": "image",
@@ -453,6 +455,33 @@
         "button_icon": "instagram"
       }
     },
+    "604d30bf-f07a-4130-8314-c819e7fbb849": {
+      "type": "instafeed-custom",
+      "blocks": {
+        "fd7dd53a-2985-4716-aa83-e1d76fc3025c": {
+          "type": "shopify:\/\/apps\/instafeed-instagram-feed\/blocks\/app-block\/c447db20-095d-4a10-9725-b5977662c9d5",
+          "settings": {
+            "heading_size": 20,
+            "feed_width": 100,
+            "html_area": ""
+          }
+        }
+      },
+      "block_order": [
+        "fd7dd53a-2985-4716-aa83-e1d76fc3025c"
+      ],
+      "settings": {
+        "subheading": "Instagram",
+        "subheading_color": "blue",
+        "heading": "Get Social",
+        "icon_color": "blue",
+        "content": "<p>Want to see more of us? Trying to stay up to date? Follow us on the socials!<\/p>",
+        "enable_button": true,
+        "button_label": "Instagram",
+        "button_url": "",
+        "button_icon": "instagram"
+      }
+    },
     "1654608061d5f9b339": {
       "type": "newsletter",
       "settings": {
@@ -473,6 +502,7 @@
     "16533094019cdcea3d",
     "16533113492a85b8ac",
     "1653310093978c665a",
+    "604d30bf-f07a-4130-8314-c819e7fbb849",
     "1654608061d5f9b339"
   ]
 }

@@ -29,28 +29,52 @@
             "share_label": "Share"
           }
         },
+        "content": {
+          "type": "content",
+          "settings": {}
+        },
         "featured_image": {
           "type": "featured_image",
           "settings": {
             "image_height": "adapt"
           }
-        },
-        "content": {
-          "type": "content",
-          "settings": {}
         }
       },
       "block_order": [
         "title",
         "share",
-        "featured_image",
-        "content"
+        "content",
+        "featured_image"
       ],
       "settings": {}
+    },
+    "7c0cbb99-d642-4fc6-9124-06a8c3c89e7a": {
+      "type": "banner",
+      "settings": {
+        "subheading_color": "blue",
+        "subtitle": "",
+        "title": "WELCOME TO OUR BREWPUB",
+        "content": "Our brewpub is open to the public five days a week, Wednesday to Sunday. Want to come for Trivia? Choose the Thursday on which you’d like to get quizzing and select “Trivia Night” as an option, when making your booking! Spots fill up quick, so reserve your table now!",
+        "btn_text": "Book a table",
+        "btn_link": "",
+        "liquid": "<iframe class=\"border-none\" data-id=\"nbi-widget\" src=\"https:\/\/bookings.nowbookit.com?accountid=4fd8e907-8174-494b-9b4f-85d537dbf574&amp;venueid=5030&amp;theme=light&amp;colors=hex,303f9f,dd191d\" id=\"iFrameResizer0\" scrolling=\"no\"><\/iframe>\n<script src=\"https:\/\/plugins.nowbookit.com\/iframe-resizer-build\/bundle.js\"><\/script>"
+      }
+    },
+    "556838e9-b7a3-448d-b8ff-16bb025665fc": {
+      "type": "book-form",
+      "settings": {
+        "heading": "Wanting to host an event or function",
+        "heading_size": "h1",
+        "descr_form": "Looking to book a space in our brewpub for your next event, night out or function? Yes, you should! Simply get in touch! We look forward to celebrating with you.",
+        "btn_text": "",
+        "btn_link": ""
+      }
     }
   },
   "order": [
     "16536417144e20a847",
-    "main"
+    "main",
+    "7c0cbb99-d642-4fc6-9124-06a8c3c89e7a",
+    "556838e9-b7a3-448d-b8ff-16bb025665fc"
   ]
 }

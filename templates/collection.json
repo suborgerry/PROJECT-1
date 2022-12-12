@@ -9,8 +9,9 @@
     "product-grid": {
       "type": "main-collection-product-grid",
       "settings": {
-        "paginate": 9,
-        "logo": ""
+        "paginate": 48,
+        "logo": "",
+        "show_dropdown": false
       }
     },
     "1653657360cc788c48": {
@@ -52,11 +53,39 @@
         "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed magna tempus interdum id volutpat diam at nullam.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed magna tempus interdum id volutpat diam at nullam.<\/p>",
         "image": "shopify:\/\/shop_images\/membership.jpg"
       }
+    },
+    "9f315a50-dce4-43c9-904f-0997edf183e0": {
+      "type": "instafeed-custom",
+      "blocks": {
+        "7babe200-a478-4299-ad54-733618d9a44f": {
+          "type": "shopify:\/\/apps\/instafeed-instagram-feed\/blocks\/app-block\/c447db20-095d-4a10-9725-b5977662c9d5",
+          "settings": {
+            "heading_size": 20,
+            "feed_width": 100,
+            "html_area": ""
+          }
+        }
+      },
+      "block_order": [
+        "7babe200-a478-4299-ad54-733618d9a44f"
+      ],
+      "settings": {
+        "subheading": "Instagram",
+        "subheading_color": "blue",
+        "heading": "Get Social",
+        "icon_color": "blue",
+        "content": "<p>Want to see more of us? Trying to stay up to date? Follow us on the socials!<\/p>",
+        "enable_button": true,
+        "button_label": "Instagram",
+        "button_url": "",
+        "button_icon": "instagram"
+      }
     }
   },
   "order": [
     "banner",
     "product-grid",
-    "1653657360cc788c48"
+    "1653657360cc788c48",
+    "9f315a50-dce4-43c9-904f-0997edf183e0"
   ]
 }

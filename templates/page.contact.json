@@ -81,6 +81,33 @@
         "pin": "shopify:\/\/shop_images\/pin.png"
       }
     },
+    "60c4beac-a0dd-4afd-9347-910cfee6a727": {
+      "type": "instafeed-custom",
+      "blocks": {
+        "6941fb51-2f2f-4bed-b98d-71973ae900e0": {
+          "type": "shopify:\/\/apps\/instafeed-instagram-feed\/blocks\/app-block\/c447db20-095d-4a10-9725-b5977662c9d5",
+          "settings": {
+            "heading_size": 20,
+            "feed_width": 100,
+            "html_area": ""
+          }
+        }
+      },
+      "block_order": [
+        "6941fb51-2f2f-4bed-b98d-71973ae900e0"
+      ],
+      "settings": {
+        "subheading": "Instagram",
+        "subheading_color": "blue",
+        "heading": "Get Social",
+        "icon_color": "blue",
+        "content": "<p>Want to see more of us? Trying to stay up to date? Follow us on the socials!<\/p>",
+        "enable_button": true,
+        "button_label": "Instagram",
+        "button_url": "",
+        "button_icon": "instagram"
+      }
+    },
     "165298235996a7a070": {
       "type": "newsletter",
       "settings": {
@@ -99,6 +126,7 @@
     "165302703509c83257",
     "form",
     "165298126124f27657",
+    "60c4beac-a0dd-4afd-9347-910cfee6a727",
     "165298235996a7a070"
   ]
 }

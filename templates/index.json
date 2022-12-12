@@ -12,6 +12,39 @@
         "on_cancel": "https:\/\/www.google.com\/"
       }
     },
+    "e2d30513-8e19-4f25-9487-6b8d807cddeb": {
+      "type": "image-banner-classic",
+      "disabled": true,
+      "blocks": {
+        "8e22d9d3-cc1e-46d3-92d8-0fe501157129": {
+          "type": "slide",
+          "settings": {
+            "heading": "",
+            "featured_image": "shopify:\/\/shop_images\/slide-1.jpg",
+            "featured_image_mobile": "shopify:\/\/shop_images\/slide-1_bf812cce-3767-44dc-b705-6fe043f60267.jpg",
+            "color": "",
+            "circle_big_color": "",
+            "circle_small_color": "",
+            "rect_color": "",
+            "triangle_color": "",
+            "product_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "8e22d9d3-cc1e-46d3-92d8-0fe501157129"
+      ],
+      "settings": {
+        "enable_scroll_down": true,
+        "autoplay_delay": 5000,
+        "heading_size_mobile": 65,
+        "heading_size_desktop": 197,
+        "enable_social": true,
+        "social_heading": "Get social",
+        "enable_call": true,
+        "call_heading": "Call 03 9484 7803"
+      }
+    },
     "1651690424fbd7e1b4": {
       "type": "image-banner",
       "blocks": {
@@ -24,7 +57,8 @@
             "circle_big_color": "#e41b12",
             "circle_small_color": "#e41b12",
             "rect_color": "#13130c",
-            "triangle_color": "#13130c"
+            "triangle_color": "#13130c",
+            "product_link": "shopify:\/\/products\/bangkok-midnight"
           }
         },
         "867f4100-945b-4251-9a0b-b41b995ce6d0": {
@@ -36,7 +70,8 @@
             "circle_big_color": "#ed7004",
             "circle_small_color": "#ffffff",
             "rect_color": "#13130c",
-            "triangle_color": "#e41b12"
+            "triangle_color": "#e41b12",
+            "product_link": "shopify:\/\/products\/bambino"
           }
         },
         "00a476bc-a045-41cf-a345-0990176a930e": {
@@ -48,7 +83,8 @@
             "circle_big_color": "#e5e293",
             "circle_small_color": "#ffffff",
             "rect_color": "#00983a",
-            "triangle_color": "#00983a"
+            "triangle_color": "#00983a",
+            "product_link": "shopify:\/\/products\/cascade-cascade"
           }
         },
         "53f24450-3155-4c27-8b3d-725e9b53eebd": {
@@ -59,8 +95,9 @@
             "color": "#256077",
             "circle_big_color": "#daa000",
             "circle_small_color": "#daa000",
-            "rect_color": "#13130C",
-            "triangle_color": "#13130C"
+            "rect_color": "#13130c",
+            "triangle_color": "#13130c",
+            "product_link": "shopify:\/\/products\/deadset"
           }
         }
       },
@@ -87,7 +124,8 @@
         "heading": "our lineup",
         "icon_color": "blue",
         "collection": "frontpage",
-        "button_label": "All Beers"
+        "button_label": "All Beers",
+        "show_dropdown": false
       }
     },
     "1652285994080fee51": {
@@ -160,8 +198,36 @@
         "button_url": "shopify:\/\/pages\/about"
       }
     },
+    "f0e8cbe2-10b1-458e-bfc6-2a78e9544487": {
+      "type": "instafeed-custom",
+      "blocks": {
+        "81a7aeb7-a84c-4b8d-8c2a-314c854ff86b": {
+          "type": "shopify:\/\/apps\/instafeed-instagram-feed\/blocks\/app-block\/c447db20-095d-4a10-9725-b5977662c9d5",
+          "settings": {
+            "heading_size": 20,
+            "feed_width": 100,
+            "html_area": ""
+          }
+        }
+      },
+      "block_order": [
+        "81a7aeb7-a84c-4b8d-8c2a-314c854ff86b"
+      ],
+      "settings": {
+        "subheading": "Instagram",
+        "subheading_color": "blue",
+        "heading": "Get Social",
+        "icon_color": "blue",
+        "content": "<p>Want to see more of us? Trying to stay up to date? Follow us on the socials!<\/p>",
+        "enable_button": true,
+        "button_label": "Instagram",
+        "button_url": "",
+        "button_icon": "instagram"
+      }
+    },
     "16527089259fc18ceb": {
       "type": "text-and-list-of-images",
+      "disabled": true,
       "blocks": {
         "e6a08144-1945-4f20-aeb9-b41f47f2c6b4": {
           "type": "image",
@@ -235,11 +301,13 @@
   },
   "order": [
     "1651580656470a0edb",
+    "e2d30513-8e19-4f25-9487-6b8d807cddeb",
     "1651690424fbd7e1b4",
     "1652104421fc0a0bf9",
     "1652285994080fee51",
     "16536413590c0cfd0d",
     "165228612922170b67",
+    "f0e8cbe2-10b1-458e-bfc6-2a78e9544487",
     "16527089259fc18ceb",
     "1652863431de4fa977"
   ]

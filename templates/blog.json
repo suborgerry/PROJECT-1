@@ -9,6 +9,7 @@
         "content": "Trivia, Beer Launches, Stand-Up Comedy, weekly food specials … here is what’s on at the  Tallboy and Moose brewpub.",
         "btn_text": "Discover More",
         "btn_link": "#shopify-section-template--14471693828181__main",
+        "btn_scroll": "",
         "liquid": ""
       }
     },
@@ -20,6 +21,33 @@
         "show_date": true,
         "show_author": false,
         "show_badge": true
+      }
+    },
+    "2b4b450f-e674-4ed7-aa1b-1cdeaa18df26": {
+      "type": "instafeed-custom",
+      "blocks": {
+        "98ee5615-5e15-44b6-aaf3-d31cc50f8126": {
+          "type": "shopify:\/\/apps\/instafeed-instagram-feed\/blocks\/app-block\/c447db20-095d-4a10-9725-b5977662c9d5",
+          "settings": {
+            "heading_size": 20,
+            "feed_width": 100,
+            "html_area": ""
+          }
+        }
+      },
+      "block_order": [
+        "98ee5615-5e15-44b6-aaf3-d31cc50f8126"
+      ],
+      "settings": {
+        "subheading": "Instagram",
+        "subheading_color": "blue",
+        "heading": "Get Social",
+        "icon_color": "blue",
+        "content": "<p>Want to see more of us? Trying to stay up to date? Follow us on the socials!<\/p>",
+        "enable_button": true,
+        "button_label": "Instagram",
+        "button_url": "",
+        "button_icon": "instagram"
       }
     },
     "1653051341358cbc75": {
@@ -38,6 +66,7 @@
   "order": [
     "16530507883a4c2f8f",
     "main",
+    "2b4b450f-e674-4ed7-aa1b-1cdeaa18df26",
     "1653051341358cbc75"
   ]
 }

@@ -17,6 +17,7 @@
         "content": "We make beer. Bloody good beer. And it all started with tall Dan and Canadian Steve hitting it off while working together in the Melbourne craft beer scene…",
         "btn_text": "",
         "btn_link": "",
+        "btn_scroll": "",
         "liquid": ""
       }
     },
@@ -29,7 +30,8 @@
         "icon_color": "blue",
         "image": "shopify:\/\/shop_images\/Illustrations.png",
         "second_text": "We are proud to be a 100% independently owned brewery. Everything we produce gets brewed and canned right here in our little taproom in Preston by a small, passionate team, that loves to be creative. We believe beer is all about sharing an experience, coming together and having fun.",
-        "first_text": "That’s exactly what we strive to do every day and what the heart and soul of Tallboy and Moose really is. We encourage everyone to choose fresh, locally-made beer and be open to explore the world of flavour, that awaits you."
+        "first_text": "That’s exactly what we strive to do every day and what the heart and soul of Tallboy and Moose really is. We encourage everyone to choose fresh, locally-made beer and be open to explore the world of flavour, that awaits you.",
+        "showbutton": false
       }
     },
     "165304391611568b1d": {
@@ -162,6 +164,7 @@
     },
     "165304919577df6bc0": {
       "type": "text-and-list-of-images",
+      "disabled": true,
       "blocks": {
         "858f940e-89e0-40d9-8099-aabd519287ee": {
           "type": "image",
@@ -220,6 +223,33 @@
         "button_icon": "instagram"
       }
     },
+    "393d1e0e-3dc0-4c42-a546-7af8ba0b6c05": {
+      "type": "instafeed-custom",
+      "blocks": {
+        "0357ef80-f4e2-49a9-913a-4c7c9fd1e165": {
+          "type": "shopify:\/\/apps\/instafeed-instagram-feed\/blocks\/app-block\/c447db20-095d-4a10-9725-b5977662c9d5",
+          "settings": {
+            "heading_size": 20,
+            "feed_width": 100,
+            "html_area": ""
+          }
+        }
+      },
+      "block_order": [
+        "0357ef80-f4e2-49a9-913a-4c7c9fd1e165"
+      ],
+      "settings": {
+        "subheading": "Instagram",
+        "subheading_color": "blue",
+        "heading": "Get Social",
+        "icon_color": "blue",
+        "content": "<p>Want to see more of us? Trying to stay up to date? Follow us on the socials!<\/p>",
+        "enable_button": true,
+        "button_label": "Instagram",
+        "button_url": "",
+        "button_icon": "instagram"
+      }
+    },
     "165303865900f2d0fd": {
       "type": "newsletter",
       "settings": {
@@ -241,6 +271,7 @@
     "1653046966674907b3",
     "166130168022890f7f",
     "165304919577df6bc0",
+    "393d1e0e-3dc0-4c42-a546-7af8ba0b6c05",
     "165303865900f2d0fd"
   ]
 }

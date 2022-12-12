@@ -115,11 +115,39 @@
         "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed magna tempus interdum id volutpat diam at nullam.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed magna tempus interdum id volutpat diam at nullam.<\/p>",
         "image": "shopify:\/\/shop_images\/membership.jpg"
       }
+    },
+    "c64f2a2a-af2c-4e0e-9ab5-11fdfb4f3966": {
+      "type": "instafeed-custom",
+      "blocks": {
+        "f78622cf-7557-439c-a7cf-b77e2b894f73": {
+          "type": "shopify:\/\/apps\/instafeed-instagram-feed\/blocks\/app-block\/c447db20-095d-4a10-9725-b5977662c9d5",
+          "settings": {
+            "heading_size": 20,
+            "feed_width": 100,
+            "html_area": ""
+          }
+        }
+      },
+      "block_order": [
+        "f78622cf-7557-439c-a7cf-b77e2b894f73"
+      ],
+      "settings": {
+        "subheading": "Instagram",
+        "subheading_color": "blue",
+        "heading": "Get Social",
+        "icon_color": "blue",
+        "content": "<p>Want to see more of us? Trying to stay up to date? Follow us on the socials!<\/p>",
+        "enable_button": true,
+        "button_label": "Instagram",
+        "button_url": "",
+        "button_icon": "instagram"
+      }
     }
   },
   "order": [
     "main",
     "product-recommendations",
-    "165364155340335ab6"
+    "165364155340335ab6",
+    "c64f2a2a-af2c-4e0e-9ab5-11fdfb4f3966"
   ]
 }

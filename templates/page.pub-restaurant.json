@@ -9,6 +9,7 @@
         "content": "Our brewpub is open to the public five days a week, Wednesday to Sunday. Want to come for Trivia? Choose the Thursday on which you’d like to get quizzing and select “Trivia Night” as an option, when making your booking! Spots fill up quick, so reserve your table now!",
         "btn_text": "Book a table",
         "btn_link": "#iFrameResizer0",
+        "btn_scroll": "",
         "liquid": "<iframe class=\"border-none\" data-id=\"nbi-widget\" src=\"https:\/\/bookings.nowbookit.com?accountid=4fd8e907-8174-494b-9b4f-85d537dbf574&amp;venueid=5030&amp;theme=light&amp;colors=hex,303f9f,dd191d\" id=\"iFrameResizer0\" scrolling=\"no\"><\/iframe>\n<script src=\"https:\/\/plugins.nowbookit.com\/iframe-resizer-build\/bundle.js\"><\/script>"
       }
     },
@@ -451,6 +452,7 @@
     },
     "1653310093978c665a": {
       "type": "text-and-list-of-images",
+      "disabled": true,
       "blocks": {
         "0ca4f4b8-6b61-4829-94cf-d67095407967": {
           "type": "image",
@@ -509,6 +511,33 @@
         "button_icon": "instagram"
       }
     },
+    "68331502-daf8-4d3b-a6d7-4f659d63f5c3": {
+      "type": "instafeed-custom",
+      "blocks": {
+        "b0efd7e9-f216-40c0-b9cf-76012c052de1": {
+          "type": "shopify:\/\/apps\/instafeed-instagram-feed\/blocks\/app-block\/c447db20-095d-4a10-9725-b5977662c9d5",
+          "settings": {
+            "heading_size": 20,
+            "feed_width": 100,
+            "html_area": ""
+          }
+        }
+      },
+      "block_order": [
+        "b0efd7e9-f216-40c0-b9cf-76012c052de1"
+      ],
+      "settings": {
+        "subheading": "Instagram",
+        "subheading_color": "blue",
+        "heading": "Get Social",
+        "icon_color": "blue",
+        "content": "<p>Want to see more of us? Trying to stay up to date? Follow us on the socials!<\/p>",
+        "enable_button": true,
+        "button_label": "Instagram",
+        "button_url": "",
+        "button_icon": "instagram"
+      }
+    },
     "1654608061d5f9b339": {
       "type": "newsletter",
       "settings": {
@@ -532,6 +561,7 @@
     "16588984096a46c9ab",
     "16533113492a85b8ac",
     "1653310093978c665a",
+    "68331502-daf8-4d3b-a6d7-4f659d63f5c3",
     "1654608061d5f9b339"
   ]
 }

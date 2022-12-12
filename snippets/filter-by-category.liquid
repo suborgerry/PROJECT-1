@@ -1,0 +1,45 @@
+{% comment %}
+  Renders facets (filtering and sorting)
+
+  Accepts:
+  - results: {Object} Collection or Search object
+  - enable_filtering: {Boolean} Show filtering when true
+  - enable_sorting: {Boolean} Show sorting when true
+  - filter_type: {String} Type of filter
+
+  Usage:
+  {% render 'facets', results: collection, enable_filtering: true, enable_sorting: true, filter_type: 'vertical' %}
+{% endcomment %}
+
+
+{% assign current_collection = collection.title %}
+
+<div class="d-block">
+  <div class="facets-drawer">
+    <div class="mt-3.75">
+      {% comment %} Heading is the first tabbable element on filter type horizontal {% endcomment %}
+      <div id="FacetsWrapperDesktop">
+          <div id="Details-{{ forloop.index }}-{{ section.id }}" class="js-filter" data-index="{{ forloop.index }}">
+
+            <h6 class="font-header text-1.125">FILTER</h6>
+
+            <div id="Facet-{{ forloop.index }}-{{ section.id }}" class="parent-display facets__display-vertical">
+              <ul class="list-unstyled no-js-hidden" role="list">
+                {%- for collection in collections -%}
+                  {% if collection.title == "All Products" or collection.title == "Beers" or collection.title == "Merch" or collection.title == "Mixed Packs" %}                    
+                    <li class="mb-1.5">
+                      <a {% if collection.title == current_collection %} role="link" aria-disabled="true" {% else %} href="{{ collection.url }}"{% endif %} class="{% if collection.title == current_collection %}current{% endif %} text-1.125 d-flex align-items-center">
+                        <span class="facets__input__rect d-block position-relative text-light mr-1">
+                          {% render 'icon' with 'check', class: 'absolute-center' %}
+                        </span>
+                        <span>{{ collection.title | escape }}</span>
+                      </a>
+                    </li>
+                  {% endif %}
+                {%- endfor -%}
+              </ul>
+            </div>
+          </div>
+      </div>
+  </div>
+</div>
