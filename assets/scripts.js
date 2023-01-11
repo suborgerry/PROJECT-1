@@ -26,7 +26,7 @@ class ImageBanner extends HTMLElement {
     }
     _autoplay() {
         setInterval(() => {
-            if (window.innerWidth > 767) return;
+            // if (window.innerWidth > 767) return;
             this._changeSlide('next');
         }, this.autoplayDelay);
     }
