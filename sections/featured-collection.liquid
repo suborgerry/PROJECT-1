@@ -27,8 +27,11 @@
           <button class="btn btn-inline" data-slider-change="next">{%- render 'icon' with 'arrow-lg', class: 'd-block' -%}</button>
         </div>
       {% endif %}
-
-      <a href="{{ collection.url }}" class="btn btn-outline-dark btn--with-icon">{{ section.settings.button_label }} {% render 'icon' with 'arrow', class: 'ml-0.5' %}</a>
+      {% if section.settings.alternative_url == blank %}
+        <a href="{{ section.settings.collection.url }}" class="btn btn-outline-dark btn--with-icon">{{ section.settings.button_label }} {% render 'icon' with 'arrow', class: 'ml-0.5' %}</a>
+      {% else %}
+        <a href="{{ section.settings.alternative_url }}" class="btn btn-outline-dark btn--with-icon">{{ section.settings.button_label }} {% render 'icon' with 'arrow', class: 'ml-0.5' %}</a>
+      {% endif %}
     </div>
   </div>
 
@@ -74,6 +77,11 @@
       "type": "collection",
       "id": "collection",
       "label": "Collection"
+    },
+    {
+      "type": "url",
+      "id": "alternative_url",
+      "label": "Alternative url"
     },
     {
       "type": "text",

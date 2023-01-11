@@ -36,50 +36,66 @@
           <div class="col-md-6 col-lg-4 mb-2.5 side-menu__info text-cream">
             <h4 class="mb-1.5 text-cream">{{ block.settings.heading }}</h4>
 
-            <div class="d-flex mb-1 text-md-1.125">
-              <div>
-                {%- render 'icon' with block.settings.icon_1 -%}
+            {% if block.settings.content_1 != empty %}
+              <div class="d-flex mb-1 text-md-1.125">
+                {% unless block.settings.icon_1 == 'none' %}
+                  <div>
+                    {%- render 'icon' with block.settings.icon_1 -%}
+                  </div>
+                {% endunless %}
+                <div class="pl-1">
+                  {{ block.settings.content_1 }}
+                </div>
               </div>
-              <div class="pl-1">
-                {{ block.settings.content_1 }}
-              </div>
-            </div>
+            {% endif %}
 
-            <div class="d-flex mb-1 text-md-1.125">
-              <div>
-                {%- render 'icon' with block.settings.icon_2 -%}
+            {% if block.settings.content_2 != empty %}
+              <div class="d-flex mb-1 text-md-1.125">
+                {% unless block.settings.icon_2 == 'none' %}
+                  <div>
+                    {%- render 'icon' with block.settings.icon_2 -%}
+                  </div>
+                {% endunless %}
+                <div class="pl-1">
+                  {{ block.settings.content_2 }}
+                </div>
               </div>
-              <div class="pl-1">
-                {{ block.settings.content_2 }}
-              </div>
-            </div>
+            {% endif %}
 
-            <div class="d-flex mb-1 text-md-1.125">
-              <div>
-                {%- render 'icon' with block.settings.icon_3 -%}
+            {% if block.settings.content_3 != empty %}
+              <div class="d-flex mb-1 text-md-1.125">
+                {% unless block.settings.icon_3 == "none" %}
+                  <div>
+                    {%- render 'icon' with block.settings.icon_3 -%}
+                  </div>
+                {% endunless %}
+                <div class="pl-1">
+                  {{ block.settings.content_3 }}
+                </div>
               </div>
-              <div class="pl-1">
-                {{ block.settings.content_3 }}
-              </div>
-            </div>
+            {% endif %}
 
-            <div class="d-flex mb-1 text-md-1.125">
-              <div>
-                {%- render 'icon' with block.settings.icon_4 -%}
+            {% if block.settings.content_4 != empty %}
+              <div class="d-flex mb-1 text-md-1.125">
+                {% unless block.settings.icon_4 == "none" %}
+                  <div>
+                    {%- render 'icon' with block.settings.icon_4 -%}
+                  </div>
+                {% endunless %}
+                <div class="pl-1">
+                  {{ block.settings.content_4 }}
+                </div>
               </div>
-              <div class="pl-1">
-                {{ block.settings.content_4 }}
-              </div>
-            </div>
+            {% endif %}
           </div>
       {% endcase %}
     {% endfor %}
   </div>
 
-  <div class="row row--md align-items-end flex-column-reverse flex-md-row mt-2.5">
-    <div class="col-md-6">
-      <div class="d-flex flex-column flex-md-row align-items-md-center">
-        <div class="d-flex align-items-center mb-1.5 mb-md-0">
+  <div class="row row--xl align-items-end flex-column-reverse flex-xl-row mt-2.5">
+    <div class="col-lx-6">
+      <div class="d-flex flex-column flex-xl-row align-items-xl-center">
+        <div class="d-flex align-items-center mb-1.5 mb-xl-0">
           <div class="mr-2.5">
             {{ section.settings.svg_1 }}
           </div>
@@ -102,8 +118,8 @@
       </div>
     </div>
 
-    <div class="col-md-6 mb-2.5 mb-md-0">
-      <div class="pl-md-3.5">
+    <div class="col-xl-6 mb-2.5 mb-xl-0">
+      <div class="pl-xl-3.5">
         {{ section.settings.image }}
       </div>
     </div>
@@ -265,7 +281,8 @@
             {"value": "phone", "label": "Phone"},
             {"value": "email", "label": "Email"},
             {"value": "pin", "label": "Pin"},
-            {"value": "calendar", "label": "Calendar"}
+            {"value": "calendar", "label": "Calendar"},
+            {"value": "none", "label": "None"}
           ],
           "default": "phone",
           "label": "Icon #1"
@@ -282,7 +299,8 @@
             {"value": "phone", "label": "Phone"},
             {"value": "email", "label": "Email"},
             {"value": "pin", "label": "Pin"},
-            {"value": "calendar", "label": "Calendar"}
+            {"value": "calendar", "label": "Calendar"},
+            {"value": "none", "label": "None"}
           ],
           "default": "phone",
           "label": "Icon #2"
@@ -299,7 +317,8 @@
             {"value": "phone", "label": "Phone"},
             {"value": "email", "label": "Email"},
             {"value": "pin", "label": "Pin"},
-            {"value": "calendar", "label": "Calendar"}
+            {"value": "calendar", "label": "Calendar"},
+            {"value": "none", "label": "None"}
           ],
           "default": "phone",
           "label": "Icon #3"
@@ -316,7 +335,8 @@
             {"value": "phone", "label": "Phone"},
             {"value": "email", "label": "Email"},
             {"value": "pin", "label": "Pin"},
-            {"value": "calendar", "label": "Calendar"}
+            {"value": "calendar", "label": "Calendar"},
+            {"value": "none", "label": "None"}
           ],
           "default": "phone",
           "label": "Icon #4"
