@@ -2281,8 +2281,14 @@ html {
 }
 
 .acknowledgment-of-country {
-  margin-top: 30px;
+  margin-bottom: 30px;
   color: #fff;
+  font-size: 18px;
+  text-align: center;
+}
+
+.acknowledgment-of-country + div {
+  text-align: center;
 }
 
 .image-banner__slide.animated .image-banner__slide__heading {
@@ -2940,6 +2946,7 @@ html {
 
 .menu_svg {
   gap: 1.5rem;
+  flex-wrap: wrap;
 }
 
 .menu__item {

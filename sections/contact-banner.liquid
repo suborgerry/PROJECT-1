@@ -51,6 +51,7 @@
                             </svg>
                             <p class="text-1.125">
                                 <span class="font-bold">{{block.settings.timetable_title}}</span><br>
+                                {{block.settings.timetable_weekend}}<br>
                                 {{block.settings.timetable_first}}<br>
                                 {{block.settings.timetable_second}}
                             </p>
@@ -156,6 +157,12 @@
                 "id": "timetable_title",
                 "label": "Timetable Title",
                 "default": "Venue Opening Hours"
+            },
+            {
+                "type": "text",
+                "id": "timetable_weekend",
+                "label": "Timetable weekend",
+                "default": "Mon-Tues Closed"
             },
             {
                 "type": "text",
